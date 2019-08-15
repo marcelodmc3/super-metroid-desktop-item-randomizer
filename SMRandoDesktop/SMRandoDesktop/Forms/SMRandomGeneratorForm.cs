@@ -57,9 +57,8 @@ namespace SMRandoDesktop.Forms
             // Max value alowed for a seed
             this.SeedNumericSelection.Maximum = int.MaxValue;
 
+            // Try to load the last section parameters
             RandomizerParameters rdparameters = null;
-
-            // Try load the last section parameters
             try { rdparameters = new RandomizerParameters(REGISTRY_KEY);}
             catch (Exception ex)
             {
@@ -71,7 +70,7 @@ namespace SMRandoDesktop.Forms
                 rdparameters = new RandomizerParameters();
             }
 
-            // Populate combo
+            // Populates the difficulty option combobox
             this.PopulateRandomizerParameters(rdparameters);
 
             // Check for exception log files
@@ -98,7 +97,7 @@ namespace SMRandoDesktop.Forms
         }
 
         /// <summary>
-        /// Check for exception log files
+        /// Check for the exception log files
         /// </summary>
         private void CheckExceptionLogFiles()
         {
@@ -117,7 +116,7 @@ namespace SMRandoDesktop.Forms
         }
 
         /// <summary>
-        /// Composes the new file name o the newly randomized ROM
+        /// Composes the new file name of the newly randomized ROM
         /// </summary>
         /// <param name="seed">Seed number</param>
         /// <param name="difficulty">Difficulty of the seed</param>
@@ -177,7 +176,7 @@ namespace SMRandoDesktop.Forms
         }
 
         /// <summary>
-        /// Click to select a rom file for randomization
+        /// Click to select a ROM file for randomization
         /// </summary>
         private void FileSelectButton_Click(object sender, EventArgs e)
         {
@@ -265,14 +264,15 @@ namespace SMRandoDesktop.Forms
 
             this.DifficultyComboBox.Items.AddRange(options.ToArray());
 
-            // Load last selected options from the userregistry
+            // Pre-select the option from the user registry
             this.DifficultyComboBox.SelectedIndex = (int)rdparameters.Difficulty;
         }
 
         /// <summary>
-        /// Display a message to the user about errors, warnings and the randomizantion process
+        /// Displays a message to the user about any possible errors, warnings and the randomizantion process
         /// </summary>
         /// <param name="message">The message to be printed</param>
+        /// <param name="messagetype">The type of message: Error, waring, information or sucess</param>
         private void PrintUserMessage(string message, UserMessageType messagetype = UserMessageType.Information)
         {
             // Create label with the message
@@ -305,6 +305,9 @@ namespace SMRandoDesktop.Forms
             this.MessagesFlowPanel.VerticalScroll.Value = this.MessagesFlowPanel.VerticalScroll.Maximum;
         }
 
+        /// <summary>
+        /// Click no the "Randomize!" button to start a randomziation process
+        /// </summary>
         private void RandomizeButton_Click(object sender, EventArgs e)
         {
             try
@@ -380,7 +383,6 @@ namespace SMRandoDesktop.Forms
 
                 // Load Rom file
                 byte[] roombytes = null;
-
                 using (FileStream romfile = new FileStream(rdparameters.SourceFilePath, FileMode.Open))
                 {
                     roombytes = new byte[(int)romfile.Length];
@@ -429,10 +431,10 @@ namespace SMRandoDesktop.Forms
                     }
                 }
 
-                // Gets the folder path that contains the source rom file
+                // Gets the folder path that contains the source ROM file
                 string folderpath = Path.GetDirectoryName(rdparameters.SourceFilePath) + "\\";
 
-                // For eache seed generated
+                // For each seed generated
                 for (int i = 0; i < randocount; i++)
                 {
                     // Seed used in the current randomization
@@ -445,6 +447,7 @@ namespace SMRandoDesktop.Forms
 
                     Tuple<int, byte[]> randoresult = null;
 
+                    // Output file names
                     string filename = "Super Metroid " + this.ComposeFileName(seed, rdparameters.Difficulty, rdparameters.SourceFilePath);
                     string filepath = folderpath + filename;
                     string spoilerfilepath = filepath + ".spoiler.txt";
@@ -468,7 +471,7 @@ namespace SMRandoDesktop.Forms
                             ex);
                     }
 
-                    // Saves the new rom on the save folder as the source file
+                    // Saves the new rom on the same folder as the source file
                     using (FileStream resultrom = new FileStream(filepath, FileMode.Create, FileAccess.ReadWrite))
                     {
                         resultrom.Write(randoresult.Item2, 0, randoresult.Item2.Length);
