@@ -9,7 +9,7 @@
 #define InstallID "{e8c433d9-4f2b-4d45-912e-9d4a8411f853}"
 #define AppCompany "SMDIRandomizer"
 #define AppCompanyFull "SMDIRandomizer"
-#define AppDescription "Instalador do " + AppFullName + " versão " + AppVersion
+#define AppDescription AppFullName + " installer version " + AppVersion
 
 [CustomMessages]
 
