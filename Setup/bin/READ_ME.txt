@@ -1,0 +1,1 @@
+Copy the content of the compiled bin projetc to this folder

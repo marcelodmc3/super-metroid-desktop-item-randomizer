@@ -1,4 +1,4 @@
-﻿namespace SMRandoDesktop.Forms
+﻿namespace SMDIRandomizer.Forms
 {
     partial class AppInfoForm
     {
@@ -216,7 +216,7 @@
             // 
             // CopyLinkLocaionToolStripMenuItem
             // 
-            this.CopyLinkLocaionToolStripMenuItem.Image = global::SMRandoDesktop.Properties.Resources.Copy_32x32;
+            this.CopyLinkLocaionToolStripMenuItem.Image = global::SMDIRandomizer.Properties.Resources.Copy_32x32;
             this.CopyLinkLocaionToolStripMenuItem.Name = "CopyLinkLocaionToolStripMenuItem";
             this.CopyLinkLocaionToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.CopyLinkLocaionToolStripMenuItem.Text = "Copy";

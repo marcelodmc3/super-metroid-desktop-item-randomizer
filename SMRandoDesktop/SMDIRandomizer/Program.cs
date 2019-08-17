@@ -1,8 +1,8 @@
-﻿using SMRandoDesktop.Forms;
+﻿using SMDIRandomizer.Forms;
 using System;
 using System.Windows.Forms;
 
-namespace SMRandoDesktop
+namespace SMDIRandomizer
 {
     static class Program
     {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SMRandoDesktop.Forms
+namespace SMDIRandomizer.Forms
 {
     /// <summary>
     /// Form that shows the application error log files

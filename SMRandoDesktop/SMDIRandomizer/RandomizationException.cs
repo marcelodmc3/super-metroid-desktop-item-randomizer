@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SMRandoDesktop
+namespace SMDIRandomizer
 {
     /// <summary>
     /// Exception class for ROM randomization errors

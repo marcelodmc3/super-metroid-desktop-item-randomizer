@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace SMRandoDesktop
+namespace SMDIRandomizer
 {
     /// <summary>
     /// Contains extension methods for the <see cref="Exception"/> class
