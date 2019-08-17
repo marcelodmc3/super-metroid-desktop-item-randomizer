@@ -58,10 +58,10 @@ namespace SMDIRandomizer
         /// <summary>
         /// Load the information from the Registry
         /// </summary>
-        /// <param name="registerkey">Key to acess the registry</param>
-        public RandomizerParameters(string registerkey)
+        /// <param name="registrykey">Key to acess the registry</param>
+        public RandomizerParameters(string registrykey)
         {
-            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(registerkey))
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(registrykey))
             {
                 int userinputseed = (int)key.GetValue(nameof(this.UserInputSeed), 1);
                 this.UserInputSeed = userinputseed == 1;
@@ -82,10 +82,10 @@ namespace SMDIRandomizer
         /// <summary>
         /// Save the randomization parameters to the registry
         /// </summary>
-        /// <param name="registerkey">Key to acess the registry</param>
-        public void SaveParameters(string registerkey)
+        /// <param name="registrykey">Key to acess the registry</param>
+        public void SaveParameters(string registrykey)
         {
-            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(registerkey))
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(registrykey))
             {
                 key.SetValue(nameof(this.UserInputSeed), this.UserInputSeed ? 1 : 0);
                 key.SetValue(nameof(this.SaveSpoilers), this.SaveSpoilers ? 1 : 0);

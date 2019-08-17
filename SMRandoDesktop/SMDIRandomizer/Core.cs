@@ -36,7 +36,7 @@ namespace SMDIRandomizer
                 // Composes the log folder path
                 string logpath = ApplicationPath + "\\ERROR_LOGS\\";
 
-                // Creates the log file path if it does not existis yet
+                // Creates the log file path if it does not exists yet
                 Directory.CreateDirectory(logpath);
 
                 // Retorn the log folder

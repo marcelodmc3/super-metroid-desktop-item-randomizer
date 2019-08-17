@@ -3,19 +3,35 @@ using ItemRandomizer;
 
 namespace SMDIRandomizer
 {
+    /// <summary>
+    /// Stores the randomizer difficulty level
+    /// </summary>
     public class DifficultyOption : IComparable<DifficultyOption>
     {
         // Properties
         #region Properties
+        /// <summary>
+        /// Randomizer difficulty
+        /// </summary>
         public Types.Difficulty Difficulty { get; private set; }
 
+        /// <summary>
+        /// The sort order of the difficulty
+        /// </summary>
         private int DifficultyOrder { get { return (int)this.Difficulty; } }
 
+        /// <summary>
+        /// The name of the difficulty
+        /// </summary>
         private string DifficultyDisplayName { get; set; }
         #endregion
 
         // Constructors
         #region Constructors
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// <param name="difficulty"></param>
         public DifficultyOption(Types.Difficulty difficulty)
         {
             switch (difficulty)
@@ -57,9 +73,9 @@ namespace SMDIRandomizer
             // Set the difficulty level
             this.Difficulty = difficulty;
         }
-
         #endregion
 
+        // Public
         #region Public
         /// <summary>
         /// Compares the order of the difficulties
@@ -71,6 +87,10 @@ namespace SMDIRandomizer
             return this.DifficultyOrder.CompareTo(other.DifficultyOrder);
         }
 
+        /// <summary>
+        /// Converts to the string representation
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return this.DifficultyDisplayName;
