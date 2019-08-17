@@ -13,6 +13,7 @@ namespace SMRandoDesktop
         /// Indicates if the application was compiled with the debug configuration
         /// </summary>
         public static bool Debug = true;
+
         #else
         /// <summary>
         /// Indicates if the application was compiled with the debug configuration

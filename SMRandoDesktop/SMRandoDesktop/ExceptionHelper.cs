@@ -9,6 +9,10 @@ namespace SMRandoDesktop
     /// </summary>
     public static class ExceptionHelper
     {
+        /// <summary>
+        /// Save the exception details to the log file
+        /// </summary>
+        /// <param name="ex"></param>
         public static void Log(this Exception ex)
         {
             try
@@ -65,6 +69,10 @@ namespace SMRandoDesktop
             } catch {; }
         }
 
+        /// <summary>
+        /// Log the exception details and displays a message to the user
+        /// </summary>
+        /// <param name="ex"></param>
         public static void LogAndDisplayMessage(this Exception ex)
         {
             ex.Log();
