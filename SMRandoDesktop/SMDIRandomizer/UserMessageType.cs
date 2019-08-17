@@ -11,7 +11,7 @@
         Sucess = 0,
 
         /// <summary>
-        /// Information message. Color DEFAULT
+        /// Information message. Color BLACK
         /// </summary>
         Information = 1,
 
