@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace SMRandoDesktop
+namespace SMDIRandomizer
 {
     /// <summary>
     /// Class containg information usefull for the application

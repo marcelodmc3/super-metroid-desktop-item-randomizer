@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace SMRandoDesktop.Forms
+namespace SMDIRandomizer.Forms
 {
     /// <summary>
     /// Displays the "about" form

@@ -1,7 +1,7 @@
 ﻿using ItemRandomizer;
 using Microsoft.Win32;
 
-namespace SMRandoDesktop
+namespace SMDIRandomizer
 {
     /// <summary>
     /// Stores the parameters for the randomization

@@ -1,4 +1,4 @@
-﻿namespace SMRandoDesktop.Forms
+﻿namespace SMDIRandomizer.Forms
 {
     partial class ExceptionLogForm
     {
@@ -86,7 +86,7 @@
             // 
             // PrevisousLogButton
             // 
-            this.PrevisousLogButton.Image = global::SMRandoDesktop.Properties.Resources.Back_32x32;
+            this.PrevisousLogButton.Image = global::SMDIRandomizer.Properties.Resources.Back_32x32;
             this.PrevisousLogButton.Location = new System.Drawing.Point(3, 3);
             this.PrevisousLogButton.MaximumSize = new System.Drawing.Size(40, 40);
             this.PrevisousLogButton.MinimumSize = new System.Drawing.Size(40, 40);
@@ -99,7 +99,7 @@
             // 
             // NexLogBUtton
             // 
-            this.NexLogBUtton.Image = global::SMRandoDesktop.Properties.Resources.Foward_32x32;
+            this.NexLogBUtton.Image = global::SMDIRandomizer.Properties.Resources.Foward_32x32;
             this.NexLogBUtton.Location = new System.Drawing.Point(49, 3);
             this.NexLogBUtton.MaximumSize = new System.Drawing.Size(40, 40);
             this.NexLogBUtton.MinimumSize = new System.Drawing.Size(40, 40);
@@ -137,7 +137,7 @@
             // 
             // CopyButton
             // 
-            this.CopyButton.Image = global::SMRandoDesktop.Properties.Resources.Copy_32x32;
+            this.CopyButton.Image = global::SMDIRandomizer.Properties.Resources.Copy_32x32;
             this.CopyButton.Location = new System.Drawing.Point(375, 3);
             this.CopyButton.MaximumSize = new System.Drawing.Size(40, 40);
             this.CopyButton.MinimumSize = new System.Drawing.Size(40, 40);

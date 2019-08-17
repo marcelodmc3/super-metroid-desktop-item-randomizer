@@ -1,4 +1,4 @@
-﻿namespace SMRandoDesktop
+﻿namespace SMDIRandomizer
 {
     /// <summary>
     /// Determines the type of message displayed to the user

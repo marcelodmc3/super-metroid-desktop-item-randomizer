@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3D79D822-207F-48A1-AAD4-27DC4396D52C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SMRandoDesktop</RootNamespace>
-    <AssemblyName>SMRandoDesktop</AssemblyName>
+    <RootNamespace>SMDIRandomizer</RootNamespace>
+    <AssemblyName>SMDIRandomizer</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

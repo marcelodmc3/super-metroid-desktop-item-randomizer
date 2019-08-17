@@ -1,4 +1,4 @@
-﻿namespace SMRandoDesktop.Forms
+﻿namespace SMDIRandomizer.Forms
 {
     partial class SMRandomGeneratorForm
     {
@@ -386,7 +386,7 @@
             // 
             this.ErrorLogButton.AutoSize = true;
             this.ErrorLogButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ErrorLogButton.Image = global::SMRandoDesktop.Properties.Resources.Error_32x32;
+            this.ErrorLogButton.Image = global::SMDIRandomizer.Properties.Resources.Error_32x32;
             this.ErrorLogButton.Location = new System.Drawing.Point(346, 0);
             this.ErrorLogButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.ErrorLogButton.MaximumSize = new System.Drawing.Size(40, 40);
@@ -402,7 +402,7 @@
             // 
             this.AppInfoButton.AutoSize = true;
             this.AppInfoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.AppInfoButton.Image = global::SMRandoDesktop.Properties.Resources.Info_32x32;
+            this.AppInfoButton.Image = global::SMDIRandomizer.Properties.Resources.Info_32x32;
             this.AppInfoButton.Location = new System.Drawing.Point(392, 0);
             this.AppInfoButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.AppInfoButton.MaximumSize = new System.Drawing.Size(40, 40);
@@ -416,7 +416,7 @@
             // 
             // SamusBackgroundImage
             // 
-            this.SamusBackgroundImage.BackgroundImage = global::SMRandoDesktop.Properties.Resources.SMBackgroud;
+            this.SamusBackgroundImage.BackgroundImage = global::SMDIRandomizer.Properties.Resources.SMBackgroud;
             this.SamusBackgroundImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SamusBackgroundImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SamusBackgroundImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("SamusBackgroundImage.InitialImage")));
@@ -452,7 +452,7 @@
             this.Name = "SMRandomGeneratorForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Desktop Super Metroid Item Randomizer";
+            this.Text = "Super Metroid Desktop Item Randomizer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SMRandoGeneratorForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SMRandomGeneratorForm_FormClosed);
             this.MainTable.ResumeLayout(false);

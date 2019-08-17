@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace SMRandoDesktop.Forms
+namespace SMDIRandomizer.Forms
 {
     /// <summary>
     /// Form for the parametrization of the randomizer

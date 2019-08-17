@@ -1,7 +1,7 @@
 ﻿using System;
 using ItemRandomizer;
 
-namespace SMRandoDesktop
+namespace SMDIRandomizer
 {
     public class DifficultyOption : IComparable<DifficultyOption>
     {
