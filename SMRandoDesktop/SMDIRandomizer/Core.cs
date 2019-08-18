@@ -27,6 +27,11 @@ namespace SMDIRandomizer
         public static string ApplicationPath = AppDomain.CurrentDomain.BaseDirectory;
 
         /// <summary>
+        /// The directory that serves as a common repository for application-specific data for the current roaming user.
+        /// </summary>
+        public static string AppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+        /// <summary>
         /// Folder path that contains the exception log files
         /// </summary>
         public static string LogPath
@@ -34,7 +39,7 @@ namespace SMDIRandomizer
             get
             {
                 // Composes the log folder path
-                string logpath = ApplicationPath + "\\ERROR_LOGS\\";
+                string logpath = (Core.Debug ? ApplicationPath : AppData + "\\" + System.Diagnostics.Process.GetCurrentProcess().ProcessName)  + "\\ERROR_LOGS\\";
 
                 // Creates the log file path if it does not exists yet
                 Directory.CreateDirectory(logpath);
