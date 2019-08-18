@@ -450,7 +450,8 @@ namespace SMDIRandomizer.Forms
                     // Output file names
                     string filename = "Super Metroid " + this.ComposeFileName(seed, rdparameters.Difficulty, rdparameters.SourceFilePath);
                     string filepath = folderpath + filename;
-                    string spoilerfilepath = filepath + ".spoiler.txt";
+                    string spoilerfilepath = filepath + ".spoilers.txt";
+                    string tempspoilersfile = Path.GetTempFileName();
 
                     try
                     {
@@ -459,7 +460,7 @@ namespace SMDIRandomizer.Forms
                             seed,
                             rdparameters.Difficulty,
                             rdparameters.SaveSpoilers,
-                            spoilerfilepath,
+                            tempspoilersfile,
                             roombytes);
                     } catch (Exception ex)
                     {
@@ -470,6 +471,12 @@ namespace SMDIRandomizer.Forms
                             "Error while randomizing the ROM", 
                             ex);
                     }
+
+                    // Write the spoiler files
+                    SpoilersWriter.WriteSpoilers(tempspoilersfile, spoilerfilepath);
+
+                    // Try to delete temp file, ignore-it if not possible
+                    try { File.Delete(tempspoilersfile); } catch {; }
 
                     // Saves the new rom on the same folder as the source file
                     using (FileStream resultrom = new FileStream(filepath, FileMode.Create, FileAccess.ReadWrite))

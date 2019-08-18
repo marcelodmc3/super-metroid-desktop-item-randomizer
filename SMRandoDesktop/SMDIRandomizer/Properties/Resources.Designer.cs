@@ -223,7 +223,7 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your randomized file(s) can be found int the same folder containing the original ROM file..
+        ///   Looks up a localized string similar to Your randomized file(s) can be found in the same folder containing the original ROM file..
         /// </summary>
         internal static string GenerateROMLocation {
             get {

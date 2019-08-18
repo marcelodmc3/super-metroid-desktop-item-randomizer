@@ -30,53 +30,53 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppInfoForm));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.MainTable = new System.Windows.Forms.TableLayoutPanel();
             this.VersionLabel = new System.Windows.Forms.Label();
             this.BuiltAgainstLabel = new System.Windows.Forms.Label();
             this.BuiltAgainstLink = new System.Windows.Forms.LinkLabel();
             this.PrePleaseVisitLabel = new System.Windows.Forms.Label();
             this.PleaseVisitLink = new System.Windows.Forms.LinkLabel();
             this.PosPleaseVisitlabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.ContactTable = new System.Windows.Forms.TableLayoutPanel();
             this.EmailLabel = new System.Windows.Forms.Label();
             this.GitHubLabel = new System.Windows.Forms.Label();
             this.EmailLink = new System.Windows.Forms.LinkLabel();
             this.GitHubLink = new System.Windows.Forms.LinkLabel();
             this.CopyLinkMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CopyLinkLocaionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.MainTable.SuspendLayout();
+            this.ContactTable.SuspendLayout();
             this.CopyLinkMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // MainTable
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.VersionLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BuiltAgainstLabel, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.BuiltAgainstLink, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.PrePleaseVisitLabel, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.PleaseVisitLink, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.PosPleaseVisitlabel, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 8);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 11;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(424, 236);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.MainTable.ColumnCount = 1;
+            this.MainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.MainTable.Controls.Add(this.VersionLabel, 0, 0);
+            this.MainTable.Controls.Add(this.BuiltAgainstLabel, 0, 2);
+            this.MainTable.Controls.Add(this.BuiltAgainstLink, 0, 3);
+            this.MainTable.Controls.Add(this.PrePleaseVisitLabel, 0, 5);
+            this.MainTable.Controls.Add(this.PleaseVisitLink, 0, 6);
+            this.MainTable.Controls.Add(this.PosPleaseVisitlabel, 0, 7);
+            this.MainTable.Controls.Add(this.ContactTable, 0, 8);
+            this.MainTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTable.Location = new System.Drawing.Point(0, 0);
+            this.MainTable.Name = "MainTable";
+            this.MainTable.RowCount = 11;
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.MainTable.Size = new System.Drawing.Size(424, 236);
+            this.MainTable.TabIndex = 0;
             // 
             // VersionLabel
             // 
@@ -94,10 +94,10 @@
             this.BuiltAgainstLabel.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuiltAgainstLabel.Location = new System.Drawing.Point(3, 35);
             this.BuiltAgainstLabel.Name = "BuiltAgainstLabel";
-            this.BuiltAgainstLabel.Size = new System.Drawing.Size(352, 30);
+            this.BuiltAgainstLabel.Size = new System.Drawing.Size(411, 30);
             this.BuiltAgainstLabel.TabIndex = 1;
             this.BuiltAgainstLabel.Text = "This randomizer was built against the on-line \"Super Metroid Item Randomizer\" ver" +
-    "sion 2.10 (2019-01-16) that can be found at: ";
+    "sion 2.10 (2019-01-16) built by tewtal that can be found at: ";
             // 
             // BuiltAgainstLink
             // 
@@ -141,25 +141,25 @@
             this.PosPleaseVisitlabel.TabIndex = 5;
             this.PosPleaseVisitlabel.Text = "for more details about the original randomizer built by Dessyreqt";
             // 
-            // tableLayoutPanel2
+            // ContactTable
             // 
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel2.Controls.Add(this.EmailLabel, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.GitHubLabel, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.EmailLink, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.GitHubLink, 1, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 168);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(418, 105);
-            this.tableLayoutPanel2.TabIndex = 6;
+            this.ContactTable.AutoSize = true;
+            this.ContactTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ContactTable.ColumnCount = 2;
+            this.ContactTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.ContactTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.ContactTable.Controls.Add(this.EmailLabel, 0, 0);
+            this.ContactTable.Controls.Add(this.GitHubLabel, 0, 1);
+            this.ContactTable.Controls.Add(this.EmailLink, 1, 0);
+            this.ContactTable.Controls.Add(this.GitHubLink, 1, 1);
+            this.ContactTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContactTable.Location = new System.Drawing.Point(3, 168);
+            this.ContactTable.Name = "ContactTable";
+            this.ContactTable.RowCount = 2;
+            this.ContactTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ContactTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ContactTable.Size = new System.Drawing.Size(418, 105);
+            this.ContactTable.TabIndex = 6;
             // 
             // EmailLabel
             // 
@@ -228,7 +228,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(424, 236);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.MainTable);
             this.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -239,10 +239,10 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.MainTable.ResumeLayout(false);
+            this.MainTable.PerformLayout();
+            this.ContactTable.ResumeLayout(false);
+            this.ContactTable.PerformLayout();
             this.CopyLinkMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -250,14 +250,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel MainTable;
         private System.Windows.Forms.Label VersionLabel;
         private System.Windows.Forms.Label BuiltAgainstLabel;
         private System.Windows.Forms.LinkLabel BuiltAgainstLink;
         private System.Windows.Forms.Label PrePleaseVisitLabel;
         private System.Windows.Forms.LinkLabel PleaseVisitLink;
         private System.Windows.Forms.Label PosPleaseVisitlabel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel ContactTable;
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Label GitHubLabel;
         private System.Windows.Forms.LinkLabel EmailLink;

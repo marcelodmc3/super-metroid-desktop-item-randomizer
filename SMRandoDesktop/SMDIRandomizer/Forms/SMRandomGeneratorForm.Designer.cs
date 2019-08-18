@@ -334,7 +334,7 @@
             this.SpoilerCheckBox.Size = new System.Drawing.Size(145, 19);
             this.SpoilerCheckBox.TabIndex = 14;
             this.SpoilerCheckBox.Text = "Save spoilers file";
-            this.ExplantionToolTip.SetToolTip(this.SpoilerCheckBox, "Generates a file containing the locations of the randomized items.");
+            this.ExplantionToolTip.SetToolTip(this.SpoilerCheckBox, "Generates a text file containing the location of the randomized items.\r\n");
             this.SpoilerCheckBox.UseVisualStyleBackColor = true;
             // 
             // RandomizeButton
