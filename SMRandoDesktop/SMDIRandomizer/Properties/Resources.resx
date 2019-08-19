@@ -153,6 +153,15 @@ Are you shure you want to stop it and close the application?</value>
   <data name="Difficulty.Tournament" xml:space="preserve">
     <value>Tournament</value>
   </data>
+  <data name="EmulatorStartedMessage" xml:space="preserve">
+    <value>"{0}" started sucessfully!</value>
+  </data>
+  <data name="EmulatorStartingErrorMessage" xml:space="preserve">
+    <value>An unexpected problem ocurred while trying to start the emulator.</value>
+  </data>
+  <data name="EmulatorStartingMessage" xml:space="preserve">
+    <value>Starting "{0}" with the last randomized ROM file...</value>
+  </data>
   <data name="ErrorCaption" xml:space="preserve">
     <value>Error while processing.</value>
   </data>

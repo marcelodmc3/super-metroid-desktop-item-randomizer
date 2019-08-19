@@ -164,6 +164,33 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;{0}&quot; started sucessfully!.
+        /// </summary>
+        internal static string EmulatorStartedMessage {
+            get {
+                return ResourceManager.GetString("EmulatorStartedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An unexpected problem ocurred while trying to start the emulator..
+        /// </summary>
+        internal static string EmulatorStartingErrorMessage {
+            get {
+                return ResourceManager.GetString("EmulatorStartingErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting &quot;{0}&quot; with the last randomized ROM file....
+        /// </summary>
+        internal static string EmulatorStartingMessage {
+            get {
+                return ResourceManager.GetString("EmulatorStartingMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Error_32x32 {

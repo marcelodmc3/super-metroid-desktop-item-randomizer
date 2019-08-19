@@ -386,6 +386,7 @@
             // 
             this.ErrorLogButton.AutoSize = true;
             this.ErrorLogButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ErrorLogButton.Enabled = false;
             this.ErrorLogButton.Image = global::SMDIRandomizer.Properties.Resources.Error_32x32;
             this.ErrorLogButton.Location = new System.Drawing.Point(346, 0);
             this.ErrorLogButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -396,6 +397,7 @@
             this.ErrorLogButton.TabIndex = 16;
             this.ExplantionToolTip.SetToolTip(this.ErrorLogButton, "Click to see the full error log of this software.");
             this.ErrorLogButton.UseVisualStyleBackColor = true;
+            this.ErrorLogButton.Visible = false;
             this.ErrorLogButton.Click += new System.EventHandler(this.ErrorLogButton_Click);
             // 
             // AppInfoButton

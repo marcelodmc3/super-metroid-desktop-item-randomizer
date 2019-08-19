@@ -112,7 +112,6 @@ namespace SMDIRandomizer.Forms
 
             // Ends the inicialization
             this._FileWatcher.EndInit();
-            this.FileWatcher_Changed(null, null);
         }
 
         /// <summary>
@@ -484,6 +483,9 @@ namespace SMDIRandomizer.Forms
                         resultrom.Write(randoresult.Item2, 0, randoresult.Item2.Length);
                     }
 
+                    // Set the last randomized ROM file
+                    rdparameters.LasRandomizedROMFile = filepath;
+
                     // Progress message
                     this.BeginInvoke(
                         new Action<string, UserMessageType>(this.PrintUserMessage),
@@ -514,6 +516,32 @@ namespace SMDIRandomizer.Forms
                         // Inform the user
                         this.PrintUserMessage(" ", UserMessageType.Sucess);
                         this.PrintUserMessage(Properties.Resources.GenerateROMLocation, UserMessageType.Sucess);
+
+                        // Start emulator after the randomization?
+                        if (rdparameters.StartEmulator)
+                        {
+                            try
+                            {
+                                // Get emulator name
+                                string emulatorname = Path.GetFileName(rdparameters.EmulatorExecutablePath);
+                                
+                                // Inform the user that the emulator is about to star
+                                this.PrintUserMessage(" ", UserMessageType.Sucess);
+                                this.PrintUserMessage(string.Format(Properties.Resources.EmulatorStartingMessage, emulatorname));
+
+                                // Lauch the emulator
+                                System.Diagnostics.Process.Start(rdparameters.EmulatorExecutablePath, "\"" + rdparameters.LasRandomizedROMFile + "\"");
+                                this.PrintUserMessage(string.Format(Properties.Resources.EmulatorStartedMessage, emulatorname), UserMessageType.Sucess);
+                            }
+
+                            // Problems?
+                            catch (Exception ex)
+                            {
+                                // Inform the user about the error
+                                this.PrintUserMessage(Properties.Resources.EmulatorStartingErrorMessage, UserMessageType.Error);
+                                ex.LogAndDisplayMessage();
+                            }
+                        }
                     }
                     else
                     {

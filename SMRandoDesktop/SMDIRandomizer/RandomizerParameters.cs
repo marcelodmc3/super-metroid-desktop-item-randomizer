@@ -16,14 +16,19 @@ namespace SMDIRandomizer
         public Types.Difficulty Difficulty { get; set; }
 
         /// <summary>
+        /// File path of the emulator executable
+        /// </summary>
+        public string EmulatorExecutablePath { get; set; }
+
+        /// <summary>
+        /// Path to the last randomized ROM file
+        /// </summary>
+        public string LasRandomizedROMFile { get; set; }
+
+        /// <summary>
         /// Number o random seed numbers selected by the user
         /// </summary>
         public int RandomSeedCount { get; set; }
-
-        /// <summary>
-        /// Seed number picked by the user
-        /// </summary>
-        public int Seed { get; set; }
 
         /// <summary>
         /// Indicates if it's necessary to generate a Spoiler file
@@ -31,9 +36,19 @@ namespace SMDIRandomizer
         public bool SaveSpoilers { get; set; }
 
         /// <summary>
+        /// Seed number picked by the user
+        /// </summary>
+        public int Seed { get; set; }
+
+        /// <summary>
         /// File path of the ROM source file
         /// </summary>
         public string SourceFilePath { get; set; }
+
+        /// <summary>
+        /// Lauch the emulator selected by the user after the randomization process?
+        /// </summary>
+        public bool StartEmulator { get; set; }
 
         /// <summary>
         /// Indicates if the seed used was inputed by the user
@@ -53,6 +68,8 @@ namespace SMDIRandomizer
             this.Seed = 0;
             this.UserInputSeed = true;
             this.SourceFilePath = string.Empty;
+            this.EmulatorExecutablePath = string.Empty;
+            this.LasRandomizedROMFile = string.Empty;
         }
 
         /// <summary>
@@ -69,10 +86,15 @@ namespace SMDIRandomizer
                 int savespoilers = (int)key.GetValue(nameof(this.SaveSpoilers), 0);
                 this.SaveSpoilers = savespoilers == 1;
 
+                int startemulator = (int)key.GetValue(nameof(this.StartEmulator), 0);
+                this.StartEmulator = startemulator == 1;
+
                 this.Seed = (int)key.GetValue(nameof(this.Seed), 0);
                 this.RandomSeedCount = (int)key.GetValue(nameof(this.RandomSeedCount), 1);
                 this.SourceFilePath = (string)key.GetValue(nameof(this.SourceFilePath), string.Empty);
                 this.Difficulty = (Types.Difficulty)(int)key.GetValue(nameof(this.Difficulty), 1);
+                this.EmulatorExecutablePath = (string)key.GetValue(nameof(this.EmulatorExecutablePath), string.Empty);
+                this.LasRandomizedROMFile = (string)key.GetValue(nameof(this.LasRandomizedROMFile), string.Empty);
             }
         }
         #endregion
@@ -93,6 +115,9 @@ namespace SMDIRandomizer
                 key.SetValue(nameof(this.RandomSeedCount), this.RandomSeedCount);
                 key.SetValue(nameof(this.SourceFilePath), this.SourceFilePath);
                 key.SetValue(nameof(this.Difficulty), (int)this.Difficulty);
+                key.SetValue(nameof(this.EmulatorExecutablePath), this.EmulatorExecutablePath);
+                key.SetValue(nameof(this.StartEmulator), this.StartEmulator ? 1 : 0);
+                key.SetValue(nameof(this.LasRandomizedROMFile), this.LasRandomizedROMFile);
             }
         }
         #endregion
