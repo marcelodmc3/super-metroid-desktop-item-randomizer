@@ -69,7 +69,6 @@ namespace SMDIRandomizer
             this.UserInputSeed = true;
             this.SourceFilePath = string.Empty;
             this.EmulatorExecutablePath = string.Empty;
-            this.LasRandomizedROMFile = string.Empty;
         }
 
         /// <summary>
@@ -94,7 +93,6 @@ namespace SMDIRandomizer
                 this.SourceFilePath = (string)key.GetValue(nameof(this.SourceFilePath), string.Empty);
                 this.Difficulty = (Types.Difficulty)(int)key.GetValue(nameof(this.Difficulty), 1);
                 this.EmulatorExecutablePath = (string)key.GetValue(nameof(this.EmulatorExecutablePath), string.Empty);
-                this.LasRandomizedROMFile = (string)key.GetValue(nameof(this.LasRandomizedROMFile), string.Empty);
             }
         }
         #endregion
@@ -117,7 +115,6 @@ namespace SMDIRandomizer
                 key.SetValue(nameof(this.Difficulty), (int)this.Difficulty);
                 key.SetValue(nameof(this.EmulatorExecutablePath), this.EmulatorExecutablePath);
                 key.SetValue(nameof(this.StartEmulator), this.StartEmulator ? 1 : 0);
-                key.SetValue(nameof(this.LasRandomizedROMFile), this.LasRandomizedROMFile);
             }
         }
         #endregion

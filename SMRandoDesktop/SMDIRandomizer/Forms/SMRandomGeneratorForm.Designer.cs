@@ -32,6 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SMRandomGeneratorForm));
             this.MainTable = new System.Windows.Forms.TableLayoutPanel();
             this.OptionsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.EmulatorSourceTable = new System.Windows.Forms.TableLayoutPanel();
+            this.EmulatorSourceLabel = new System.Windows.Forms.Label();
+            this.EmulatorSourceButton = new System.Windows.Forms.Button();
+            this.EmulatorSourceTextBox = new System.Windows.Forms.TextBox();
+            this.UseEmulatorCheckBox = new System.Windows.Forms.CheckBox();
+            this.EmulatorLabel = new System.Windows.Forms.Label();
             this.DifficultyLabel = new System.Windows.Forms.Label();
             this.RomSourceLabel = new System.Windows.Forms.Label();
             this.SeedingMethodTable = new System.Windows.Forms.TableLayoutPanel();
@@ -57,8 +63,10 @@
             this.OpenRomDialog = new System.Windows.Forms.OpenFileDialog();
             this.ExplantionToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.RandomizerThread = new System.ComponentModel.BackgroundWorker();
+            this.OpenEmulatorDialog = new System.Windows.Forms.OpenFileDialog();
             this.MainTable.SuspendLayout();
             this.OptionsTable.SuspendLayout();
+            this.EmulatorSourceTable.SuspendLayout();
             this.SeedingMethodTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeedNumericSelection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RandomSeedNumericSelection)).BeginInit();
@@ -71,8 +79,8 @@
             // MainTable
             // 
             this.MainTable.ColumnCount = 2;
-            this.MainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43F));
-            this.MainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57F));
+            this.MainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.MainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.MainTable.Controls.Add(this.OptionsTable, 1, 0);
             this.MainTable.Controls.Add(this.SamusBackgroundImage, 0, 0);
             this.MainTable.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -80,7 +88,7 @@
             this.MainTable.Name = "MainTable";
             this.MainTable.RowCount = 1;
             this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainTable.Size = new System.Drawing.Size(784, 511);
+            this.MainTable.Size = new System.Drawing.Size(904, 631);
             this.MainTable.TabIndex = 1;
             // 
             // OptionsTable
@@ -88,19 +96,25 @@
             this.OptionsTable.BackColor = System.Drawing.Color.White;
             this.OptionsTable.ColumnCount = 1;
             this.OptionsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.OptionsTable.Controls.Add(this.EmulatorSourceTable, 0, 8);
+            this.OptionsTable.Controls.Add(this.UseEmulatorCheckBox, 0, 7);
+            this.OptionsTable.Controls.Add(this.EmulatorLabel, 0, 6);
             this.OptionsTable.Controls.Add(this.DifficultyLabel, 0, 4);
             this.OptionsTable.Controls.Add(this.RomSourceLabel, 0, 0);
             this.OptionsTable.Controls.Add(this.SeedingMethodTable, 0, 3);
             this.OptionsTable.Controls.Add(this.SeedingMethodLabel, 0, 2);
             this.OptionsTable.Controls.Add(this.RomSourceTable, 0, 1);
             this.OptionsTable.Controls.Add(this.DifficultyTable, 0, 5);
-            this.OptionsTable.Controls.Add(this.RandomizeButton, 0, 6);
-            this.OptionsTable.Controls.Add(this.MessagesFlowPanel, 0, 7);
-            this.OptionsTable.Controls.Add(this.InfoTable, 0, 8);
+            this.OptionsTable.Controls.Add(this.RandomizeButton, 0, 9);
+            this.OptionsTable.Controls.Add(this.MessagesFlowPanel, 0, 10);
+            this.OptionsTable.Controls.Add(this.InfoTable, 0, 11);
             this.OptionsTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OptionsTable.Location = new System.Drawing.Point(340, 3);
+            this.OptionsTable.Location = new System.Drawing.Point(364, 3);
             this.OptionsTable.Name = "OptionsTable";
-            this.OptionsTable.RowCount = 9;
+            this.OptionsTable.RowCount = 12;
+            this.OptionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.OptionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.OptionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.OptionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.OptionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.OptionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -110,8 +124,92 @@
             this.OptionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.OptionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.OptionsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.OptionsTable.Size = new System.Drawing.Size(441, 505);
+            this.OptionsTable.Size = new System.Drawing.Size(537, 625);
             this.OptionsTable.TabIndex = 0;
+            // 
+            // EmulatorSourceTable
+            // 
+            this.EmulatorSourceTable.ColumnCount = 3;
+            this.EmulatorSourceTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.EmulatorSourceTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.EmulatorSourceTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.EmulatorSourceTable.Controls.Add(this.EmulatorSourceLabel, 0, 0);
+            this.EmulatorSourceTable.Controls.Add(this.EmulatorSourceButton, 2, 0);
+            this.EmulatorSourceTable.Controls.Add(this.EmulatorSourceTextBox, 1, 0);
+            this.EmulatorSourceTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmulatorSourceTable.Enabled = false;
+            this.EmulatorSourceTable.Location = new System.Drawing.Point(3, 366);
+            this.EmulatorSourceTable.Name = "EmulatorSourceTable";
+            this.EmulatorSourceTable.RowCount = 1;
+            this.EmulatorSourceTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.EmulatorSourceTable.Size = new System.Drawing.Size(531, 34);
+            this.EmulatorSourceTable.TabIndex = 16;
+            // 
+            // EmulatorSourceLabel
+            // 
+            this.EmulatorSourceLabel.AutoSize = true;
+            this.EmulatorSourceLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmulatorSourceLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmulatorSourceLabel.Location = new System.Drawing.Point(3, 0);
+            this.EmulatorSourceLabel.Name = "EmulatorSourceLabel";
+            this.EmulatorSourceLabel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.EmulatorSourceLabel.Size = new System.Drawing.Size(135, 34);
+            this.EmulatorSourceLabel.TabIndex = 1;
+            this.EmulatorSourceLabel.Text = "Select the emulator:";
+            this.EmulatorSourceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExplantionToolTip.SetToolTip(this.EmulatorSourceLabel, "Select an emulator program to lauch the randomized ROM file");
+            // 
+            // EmulatorSourceButton
+            // 
+            this.EmulatorSourceButton.AutoSize = true;
+            this.EmulatorSourceButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.EmulatorSourceButton.Location = new System.Drawing.Point(496, 3);
+            this.EmulatorSourceButton.MaximumSize = new System.Drawing.Size(32, 28);
+            this.EmulatorSourceButton.MinimumSize = new System.Drawing.Size(32, 28);
+            this.EmulatorSourceButton.Name = "EmulatorSourceButton";
+            this.EmulatorSourceButton.Size = new System.Drawing.Size(32, 28);
+            this.EmulatorSourceButton.TabIndex = 3;
+            this.EmulatorSourceButton.Text = "...";
+            this.ExplantionToolTip.SetToolTip(this.EmulatorSourceButton, "Select an emulator program to lauch the randomized ROM file");
+            this.EmulatorSourceButton.UseVisualStyleBackColor = true;
+            this.EmulatorSourceButton.Click += new System.EventHandler(this.EmulatorSourceButton_Click);
+            // 
+            // EmulatorSourceTextBox
+            // 
+            this.EmulatorSourceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.EmulatorSourceTextBox.Location = new System.Drawing.Point(144, 5);
+            this.EmulatorSourceTextBox.Name = "EmulatorSourceTextBox";
+            this.EmulatorSourceTextBox.Size = new System.Drawing.Size(346, 23);
+            this.EmulatorSourceTextBox.TabIndex = 2;
+            this.EmulatorSourceTextBox.TextChanged += new System.EventHandler(this.FileSelectTextBox_TextChanged);
+            // 
+            // UseEmulatorCheckBox
+            // 
+            this.UseEmulatorCheckBox.AutoSize = true;
+            this.UseEmulatorCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UseEmulatorCheckBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
+            this.UseEmulatorCheckBox.Location = new System.Drawing.Point(6, 341);
+            this.UseEmulatorCheckBox.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.UseEmulatorCheckBox.Name = "UseEmulatorCheckBox";
+            this.UseEmulatorCheckBox.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.UseEmulatorCheckBox.Size = new System.Drawing.Size(528, 19);
+            this.UseEmulatorCheckBox.TabIndex = 15;
+            this.UseEmulatorCheckBox.Text = "Launch the randomized ROM file";
+            this.UseEmulatorCheckBox.UseVisualStyleBackColor = true;
+            this.UseEmulatorCheckBox.CheckedChanged += new System.EventHandler(this.UseEmulatorCheckBox_CheckedChanged);
+            // 
+            // EmulatorLabel
+            // 
+            this.EmulatorLabel.AutoSize = true;
+            this.EmulatorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmulatorLabel.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmulatorLabel.Location = new System.Drawing.Point(3, 292);
+            this.EmulatorLabel.Name = "EmulatorLabel";
+            this.EmulatorLabel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.EmulatorLabel.Size = new System.Drawing.Size(531, 46);
+            this.EmulatorLabel.TabIndex = 9;
+            this.EmulatorLabel.Text = "Emulator";
+            this.EmulatorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // DifficultyLabel
             // 
@@ -121,7 +219,7 @@
             this.DifficultyLabel.Location = new System.Drawing.Point(3, 186);
             this.DifficultyLabel.Name = "DifficultyLabel";
             this.DifficultyLabel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.DifficultyLabel.Size = new System.Drawing.Size(435, 46);
+            this.DifficultyLabel.Size = new System.Drawing.Size(531, 46);
             this.DifficultyLabel.TabIndex = 5;
             this.DifficultyLabel.Text = "Difficulty";
             this.DifficultyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -134,7 +232,7 @@
             this.RomSourceLabel.Location = new System.Drawing.Point(3, 0);
             this.RomSourceLabel.Name = "RomSourceLabel";
             this.RomSourceLabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.RomSourceLabel.Size = new System.Drawing.Size(435, 36);
+            this.RomSourceLabel.Size = new System.Drawing.Size(531, 36);
             this.RomSourceLabel.TabIndex = 0;
             this.RomSourceLabel.Text = "ROM source";
             this.RomSourceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -156,7 +254,7 @@
             this.SeedingMethodTable.RowCount = 2;
             this.SeedingMethodTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.SeedingMethodTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.SeedingMethodTable.Size = new System.Drawing.Size(435, 58);
+            this.SeedingMethodTable.Size = new System.Drawing.Size(531, 58);
             this.SeedingMethodTable.TabIndex = 4;
             // 
             // SeedNumericSelection
@@ -164,7 +262,7 @@
             this.SeedNumericSelection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SeedNumericSelection.Location = new System.Drawing.Point(244, 3);
             this.SeedNumericSelection.Name = "SeedNumericSelection";
-            this.SeedNumericSelection.Size = new System.Drawing.Size(188, 23);
+            this.SeedNumericSelection.Size = new System.Drawing.Size(284, 23);
             this.SeedNumericSelection.TabIndex = 6;
             this.SeedNumericSelection.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -206,7 +304,7 @@
             0,
             0});
             this.RandomSeedNumericSelection.Name = "RandomSeedNumericSelection";
-            this.RandomSeedNumericSelection.Size = new System.Drawing.Size(188, 23);
+            this.RandomSeedNumericSelection.Size = new System.Drawing.Size(284, 23);
             this.RandomSeedNumericSelection.TabIndex = 8;
             this.RandomSeedNumericSelection.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RandomSeedNumericSelection.Value = new decimal(new int[] {
@@ -223,7 +321,7 @@
             this.SeedingMethodLabel.Location = new System.Drawing.Point(3, 76);
             this.SeedingMethodLabel.Name = "SeedingMethodLabel";
             this.SeedingMethodLabel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.SeedingMethodLabel.Size = new System.Drawing.Size(435, 46);
+            this.SeedingMethodLabel.Size = new System.Drawing.Size(531, 46);
             this.SeedingMethodLabel.TabIndex = 3;
             this.SeedingMethodLabel.Text = "Seeding method";
             this.SeedingMethodLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -242,7 +340,7 @@
             this.RomSourceTable.Name = "RomSourceTable";
             this.RomSourceTable.RowCount = 1;
             this.RomSourceTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.RomSourceTable.Size = new System.Drawing.Size(435, 34);
+            this.RomSourceTable.Size = new System.Drawing.Size(531, 34);
             this.RomSourceTable.TabIndex = 0;
             // 
             // FileSelectLabel
@@ -253,16 +351,16 @@
             this.FileSelectLabel.Location = new System.Drawing.Point(3, 0);
             this.FileSelectLabel.Name = "FileSelectLabel";
             this.FileSelectLabel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.FileSelectLabel.Size = new System.Drawing.Size(127, 34);
+            this.FileSelectLabel.Size = new System.Drawing.Size(131, 34);
             this.FileSelectLabel.TabIndex = 1;
-            this.FileSelectLabel.Text = "Select the rom file:";
+            this.FileSelectLabel.Text = "Select the ROM file:";
             this.FileSelectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FileSelectButton
             // 
             this.FileSelectButton.AutoSize = true;
             this.FileSelectButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.FileSelectButton.Location = new System.Drawing.Point(400, 3);
+            this.FileSelectButton.Location = new System.Drawing.Point(496, 3);
             this.FileSelectButton.MaximumSize = new System.Drawing.Size(32, 28);
             this.FileSelectButton.MinimumSize = new System.Drawing.Size(32, 28);
             this.FileSelectButton.Name = "FileSelectButton";
@@ -275,9 +373,9 @@
             // FileSelectTextBox
             // 
             this.FileSelectTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.FileSelectTextBox.Location = new System.Drawing.Point(136, 5);
+            this.FileSelectTextBox.Location = new System.Drawing.Point(140, 5);
             this.FileSelectTextBox.Name = "FileSelectTextBox";
-            this.FileSelectTextBox.Size = new System.Drawing.Size(258, 23);
+            this.FileSelectTextBox.Size = new System.Drawing.Size(350, 23);
             this.FileSelectTextBox.TabIndex = 2;
             this.FileSelectTextBox.TextChanged += new System.EventHandler(this.FileSelectTextBox_TextChanged);
             // 
@@ -297,7 +395,7 @@
             this.DifficultyTable.RowCount = 2;
             this.DifficultyTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.DifficultyTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.DifficultyTable.Size = new System.Drawing.Size(435, 54);
+            this.DifficultyTable.Size = new System.Drawing.Size(531, 54);
             this.DifficultyTable.TabIndex = 6;
             // 
             // DifficultySelectionLabel
@@ -320,7 +418,7 @@
             this.DifficultyComboBox.FormattingEnabled = true;
             this.DifficultyComboBox.Location = new System.Drawing.Point(154, 3);
             this.DifficultyComboBox.Name = "DifficultyComboBox";
-            this.DifficultyComboBox.Size = new System.Drawing.Size(278, 23);
+            this.DifficultyComboBox.Size = new System.Drawing.Size(374, 23);
             this.DifficultyComboBox.TabIndex = 11;
             // 
             // SpoilerCheckBox
@@ -343,10 +441,10 @@
             this.RandomizeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.RandomizeButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RandomizeButton.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
-            this.RandomizeButton.Location = new System.Drawing.Point(5, 305);
+            this.RandomizeButton.Location = new System.Drawing.Point(5, 416);
             this.RandomizeButton.Margin = new System.Windows.Forms.Padding(5, 13, 5, 3);
             this.RandomizeButton.Name = "RandomizeButton";
-            this.RandomizeButton.Size = new System.Drawing.Size(431, 36);
+            this.RandomizeButton.Size = new System.Drawing.Size(527, 36);
             this.RandomizeButton.TabIndex = 7;
             this.RandomizeButton.Text = "Randomize!";
             this.RandomizeButton.UseVisualStyleBackColor = true;
@@ -357,9 +455,9 @@
             this.MessagesFlowPanel.AutoScroll = true;
             this.MessagesFlowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MessagesFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.MessagesFlowPanel.Location = new System.Drawing.Point(3, 347);
+            this.MessagesFlowPanel.Location = new System.Drawing.Point(3, 458);
             this.MessagesFlowPanel.Name = "MessagesFlowPanel";
-            this.MessagesFlowPanel.Size = new System.Drawing.Size(435, 115);
+            this.MessagesFlowPanel.Size = new System.Drawing.Size(531, 124);
             this.MessagesFlowPanel.TabIndex = 7;
             this.MessagesFlowPanel.WrapContents = false;
             // 
@@ -374,12 +472,12 @@
             this.InfoTable.Controls.Add(this.ErrorLogButton, 1, 0);
             this.InfoTable.Controls.Add(this.AppInfoButton, 2, 0);
             this.InfoTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.InfoTable.Location = new System.Drawing.Point(3, 465);
+            this.InfoTable.Location = new System.Drawing.Point(3, 585);
             this.InfoTable.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.InfoTable.Name = "InfoTable";
             this.InfoTable.RowCount = 1;
             this.InfoTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.InfoTable.Size = new System.Drawing.Size(435, 40);
+            this.InfoTable.Size = new System.Drawing.Size(531, 40);
             this.InfoTable.TabIndex = 8;
             // 
             // ErrorLogButton
@@ -388,7 +486,7 @@
             this.ErrorLogButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ErrorLogButton.Enabled = false;
             this.ErrorLogButton.Image = global::SMDIRandomizer.Properties.Resources.Error_32x32;
-            this.ErrorLogButton.Location = new System.Drawing.Point(346, 0);
+            this.ErrorLogButton.Location = new System.Drawing.Point(442, 0);
             this.ErrorLogButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.ErrorLogButton.MaximumSize = new System.Drawing.Size(40, 40);
             this.ErrorLogButton.MinimumSize = new System.Drawing.Size(40, 40);
@@ -405,7 +503,7 @@
             this.AppInfoButton.AutoSize = true;
             this.AppInfoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AppInfoButton.Image = global::SMDIRandomizer.Properties.Resources.Info_32x32;
-            this.AppInfoButton.Location = new System.Drawing.Point(392, 0);
+            this.AppInfoButton.Location = new System.Drawing.Point(488, 0);
             this.AppInfoButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.AppInfoButton.MaximumSize = new System.Drawing.Size(40, 40);
             this.AppInfoButton.MinimumSize = new System.Drawing.Size(40, 40);
@@ -418,14 +516,15 @@
             // 
             // SamusBackgroundImage
             // 
-            this.SamusBackgroundImage.BackgroundImage = global::SMDIRandomizer.Properties.Resources.SMBackgroud;
+            this.SamusBackgroundImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SamusBackgroundImage.BackgroundImage")));
             this.SamusBackgroundImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SamusBackgroundImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SamusBackgroundImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("SamusBackgroundImage.InitialImage")));
+            this.SamusBackgroundImage.Image = global::SMDIRandomizer.Properties.Resources.SMBackgroud;
             this.SamusBackgroundImage.Location = new System.Drawing.Point(0, 0);
             this.SamusBackgroundImage.Margin = new System.Windows.Forms.Padding(0);
             this.SamusBackgroundImage.Name = "SamusBackgroundImage";
-            this.SamusBackgroundImage.Size = new System.Drawing.Size(337, 511);
+            this.SamusBackgroundImage.Size = new System.Drawing.Size(361, 631);
+            this.SamusBackgroundImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SamusBackgroundImage.TabIndex = 1;
             this.SamusBackgroundImage.TabStop = false;
             // 
@@ -438,19 +537,24 @@
             this.RandomizerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.RandomizerThread_DoWork);
             this.RandomizerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.RandomizerThread_RunWorkerCompleted);
             // 
+            // OpenEmulatorDialog
+            // 
+            this.OpenEmulatorDialog.Filter = "Emulator executables | *.exe";
+            this.OpenEmulatorDialog.Title = "Select a emulator to lauch the randomized ROM file";
+            // 
             // SMRandomGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(784, 511);
+            this.ClientSize = new System.Drawing.Size(904, 631);
             this.Controls.Add(this.MainTable);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(800, 550);
-            this.MinimumSize = new System.Drawing.Size(800, 550);
+            this.MaximumSize = new System.Drawing.Size(920, 670);
+            this.MinimumSize = new System.Drawing.Size(800, 670);
             this.Name = "SMRandomGeneratorForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -460,6 +564,8 @@
             this.MainTable.ResumeLayout(false);
             this.OptionsTable.ResumeLayout(false);
             this.OptionsTable.PerformLayout();
+            this.EmulatorSourceTable.ResumeLayout(false);
+            this.EmulatorSourceTable.PerformLayout();
             this.SeedingMethodTable.ResumeLayout(false);
             this.SeedingMethodTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeedNumericSelection)).EndInit();
@@ -504,6 +610,13 @@
         private System.Windows.Forms.Button ErrorLogButton;
         private System.Windows.Forms.Button AppInfoButton;
         private System.Windows.Forms.CheckBox SpoilerCheckBox;
+        private System.Windows.Forms.OpenFileDialog OpenEmulatorDialog;
+        private System.Windows.Forms.TableLayoutPanel EmulatorSourceTable;
+        private System.Windows.Forms.Label EmulatorSourceLabel;
+        private System.Windows.Forms.Button EmulatorSourceButton;
+        private System.Windows.Forms.TextBox EmulatorSourceTextBox;
+        private System.Windows.Forms.CheckBox UseEmulatorCheckBox;
+        private System.Windows.Forms.Label EmulatorLabel;
     }
 }
 

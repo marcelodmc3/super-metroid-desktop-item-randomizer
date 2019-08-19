@@ -153,6 +153,9 @@ Are you shure you want to stop it and close the application?</value>
   <data name="Difficulty.Tournament" xml:space="preserve">
     <value>Tournament</value>
   </data>
+  <data name="EmulatorFilePathWarning" xml:space="preserve">
+    <value>Please select a valid emulator executable.</value>
+  </data>
   <data name="EmulatorStartedMessage" xml:space="preserve">
     <value>"{0}" started sucessfully!</value>
   </data>
@@ -177,13 +180,13 @@ Make shure you are using a valid vanilla (unheadered) Super Metroid ROM file and
     <value>..\Resources\Error_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FilePathWarning" xml:space="preserve">
-    <value>Please select a valid file path.</value>
+    <value>Please select a valid ROM file path.</value>
   </data>
   <data name="Foward_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Foward_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GenerateROMLocation" xml:space="preserve">
-    <value>Your randomized file(s) can be found in the same folder containing the original ROM file.</value>
+    <value>Your randomized file(s) can be found in the same folder containing the original ROM file(s).</value>
   </data>
   <data name="GenericErrorMessage" xml:space="preserve">
     <value>The application has encontered a error.</value>

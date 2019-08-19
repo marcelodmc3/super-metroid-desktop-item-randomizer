@@ -164,6 +164,15 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select a valid emulator executable..
+        /// </summary>
+        internal static string EmulatorFilePathWarning {
+            get {
+                return ResourceManager.GetString("EmulatorFilePathWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;{0}&quot; started sucessfully!.
         /// </summary>
         internal static string EmulatorStartedMessage {
@@ -231,7 +240,7 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a valid file path..
+        ///   Looks up a localized string similar to Please select a valid ROM file path..
         /// </summary>
         internal static string FilePathWarning {
             get {
@@ -250,7 +259,7 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your randomized file(s) can be found in the same folder containing the original ROM file..
+        ///   Looks up a localized string similar to Your randomized file(s) can be found in the same folder containing the original ROM file(s)..
         /// </summary>
         internal static string GenerateROMLocation {
             get {

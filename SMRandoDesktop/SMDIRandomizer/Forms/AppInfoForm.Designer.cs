@@ -75,7 +75,7 @@
             this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainTable.Size = new System.Drawing.Size(424, 236);
+            this.MainTable.Size = new System.Drawing.Size(444, 296);
             this.MainTable.TabIndex = 0;
             // 
             // VersionLabel
@@ -84,9 +84,9 @@
             this.VersionLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VersionLabel.Location = new System.Drawing.Point(3, 0);
             this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(295, 15);
+            this.VersionLabel.Size = new System.Drawing.Size(275, 15);
             this.VersionLabel.TabIndex = 0;
-            this.VersionLabel.Text = "Super Metroid Desktop Item Randomizer version 0.9";
+            this.VersionLabel.Text = "Super Metroid Desktop Item Randomizer version";
             // 
             // BuiltAgainstLabel
             // 
@@ -94,7 +94,7 @@
             this.BuiltAgainstLabel.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuiltAgainstLabel.Location = new System.Drawing.Point(3, 35);
             this.BuiltAgainstLabel.Name = "BuiltAgainstLabel";
-            this.BuiltAgainstLabel.Size = new System.Drawing.Size(411, 30);
+            this.BuiltAgainstLabel.Size = new System.Drawing.Size(422, 30);
             this.BuiltAgainstLabel.TabIndex = 1;
             this.BuiltAgainstLabel.Text = "This randomizer was built against the on-line \"Super Metroid Item Randomizer\" ver" +
     "sion 2.10 (2019-01-16) built by tewtal that can be found at: ";
@@ -137,7 +137,7 @@
             this.PosPleaseVisitlabel.Location = new System.Drawing.Point(3, 130);
             this.PosPleaseVisitlabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
             this.PosPleaseVisitlabel.Name = "PosPleaseVisitlabel";
-            this.PosPleaseVisitlabel.Size = new System.Drawing.Size(418, 15);
+            this.PosPleaseVisitlabel.Size = new System.Drawing.Size(438, 15);
             this.PosPleaseVisitlabel.TabIndex = 5;
             this.PosPleaseVisitlabel.Text = "for more details about the original randomizer built by Dessyreqt";
             // 
@@ -158,7 +158,7 @@
             this.ContactTable.RowCount = 2;
             this.ContactTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.ContactTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ContactTable.Size = new System.Drawing.Size(418, 105);
+            this.ContactTable.Size = new System.Drawing.Size(438, 90);
             this.ContactTable.TabIndex = 6;
             // 
             // EmailLabel
@@ -167,7 +167,7 @@
             this.EmailLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmailLabel.Location = new System.Drawing.Point(3, 0);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(161, 30);
+            this.EmailLabel.Size = new System.Drawing.Size(169, 30);
             this.EmailLabel.TabIndex = 0;
             this.EmailLabel.Text = "Problems? Contact me at the e-mail:";
             // 
@@ -177,7 +177,7 @@
             this.GitHubLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.GitHubLabel.Location = new System.Drawing.Point(3, 30);
             this.GitHubLabel.Name = "GitHubLabel";
-            this.GitHubLabel.Size = new System.Drawing.Size(161, 15);
+            this.GitHubLabel.Size = new System.Drawing.Size(169, 15);
             this.GitHubLabel.TabIndex = 1;
             this.GitHubLabel.Text = "Or open an issue at:";
             // 
@@ -185,9 +185,9 @@
             // 
             this.EmailLink.AutoSize = true;
             this.EmailLink.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EmailLink.Location = new System.Drawing.Point(170, 0);
+            this.EmailLink.Location = new System.Drawing.Point(178, 0);
             this.EmailLink.Name = "EmailLink";
-            this.EmailLink.Size = new System.Drawing.Size(245, 30);
+            this.EmailLink.Size = new System.Drawing.Size(257, 30);
             this.EmailLink.TabIndex = 2;
             this.EmailLink.TabStop = true;
             this.EmailLink.Text = "marcelodmc3@gmail.com";
@@ -198,9 +198,9 @@
             // 
             this.GitHubLink.AutoSize = true;
             this.GitHubLink.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GitHubLink.Location = new System.Drawing.Point(170, 30);
+            this.GitHubLink.Location = new System.Drawing.Point(178, 30);
             this.GitHubLink.Name = "GitHubLink";
-            this.GitHubLink.Size = new System.Drawing.Size(245, 30);
+            this.GitHubLink.Size = new System.Drawing.Size(257, 30);
             this.GitHubLink.TabIndex = 3;
             this.GitHubLink.TabStop = true;
             this.GitHubLink.Text = "https://github.com/marcelodmc3/super-metroid-desktop-item-randomizer/issues";
@@ -227,14 +227,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(424, 236);
+            this.ClientSize = new System.Drawing.Size(444, 296);
             this.Controls.Add(this.MainTable);
             this.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(440, 275);
-            this.MinimumSize = new System.Drawing.Size(440, 275);
+            this.MaximumSize = new System.Drawing.Size(460, 335);
+            this.MinimumSize = new System.Drawing.Size(460, 335);
             this.Name = "AppInfoForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

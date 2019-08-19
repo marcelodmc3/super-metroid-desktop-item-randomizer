@@ -113,13 +113,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\SMBackgroud.png" />
     <None Include="Resources\Foward_32x32.png" />
     <None Include="Resources\Back_32x32.png" />
     <None Include="Resources\Copy_32x32.png" />
     <None Include="Resources\Info_32x32.png" />
     <None Include="Resources\Error_32x32.png" />
     <None Include="Resources\Error_64x64.png" />
-    <None Include="Resources\SMBackgroud.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ItemRandomizer\ItemRandomizer.fsproj">

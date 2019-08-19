@@ -56,7 +56,7 @@
             this.MainTable.RowCount = 2;
             this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainTable.Size = new System.Drawing.Size(424, 511);
+            this.MainTable.Size = new System.Drawing.Size(444, 631);
             this.MainTable.TabIndex = 0;
             // 
             // LogSelectionTable
@@ -81,7 +81,7 @@
             this.LogSelectionTable.Name = "LogSelectionTable";
             this.LogSelectionTable.RowCount = 1;
             this.LogSelectionTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.LogSelectionTable.Size = new System.Drawing.Size(418, 46);
+            this.LogSelectionTable.Size = new System.Drawing.Size(438, 46);
             this.LogSelectionTable.TabIndex = 0;
             // 
             // PrevisousLogButton
@@ -129,7 +129,7 @@
             this.LogDateLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogDateLabel.Location = new System.Drawing.Point(193, 0);
             this.LogDateLabel.Name = "LogDateLabel";
-            this.LogDateLabel.Size = new System.Drawing.Size(176, 46);
+            this.LogDateLabel.Size = new System.Drawing.Size(196, 46);
             this.LogDateLabel.TabIndex = 3;
             this.LogDateLabel.Text = "WW/XX/ZZZ";
             this.LogDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,7 +138,7 @@
             // CopyButton
             // 
             this.CopyButton.Image = global::SMDIRandomizer.Properties.Resources.Copy_32x32;
-            this.CopyButton.Location = new System.Drawing.Point(375, 3);
+            this.CopyButton.Location = new System.Drawing.Point(395, 3);
             this.CopyButton.MaximumSize = new System.Drawing.Size(40, 40);
             this.CopyButton.MinimumSize = new System.Drawing.Size(40, 40);
             this.CopyButton.Name = "CopyButton";
@@ -169,7 +169,7 @@
             this.LogTextBox.Name = "LogTextBox";
             this.LogTextBox.ReadOnly = true;
             this.LogTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.LogTextBox.Size = new System.Drawing.Size(418, 453);
+            this.LogTextBox.Size = new System.Drawing.Size(438, 573);
             this.LogTextBox.TabIndex = 1;
             // 
             // ExceptionLogForm
@@ -177,14 +177,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(424, 511);
+            this.ClientSize = new System.Drawing.Size(444, 631);
             this.Controls.Add(this.MainTable);
             this.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(440, 550);
-            this.MinimumSize = new System.Drawing.Size(440, 550);
+            this.MaximumSize = new System.Drawing.Size(460, 670);
+            this.MinimumSize = new System.Drawing.Size(460, 670);
             this.Name = "ExceptionLogForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

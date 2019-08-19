@@ -31,6 +31,11 @@ namespace SMDIRandomizer.Forms
         FileSystemWatcher _FileWatcher;
 
         /// <summary>
+        /// Last randomized ROM file path
+        /// </summary>
+        private string _LasRandomizedROMFile;
+
+        /// <summary>
         /// Supported difficulties available to the ramdomizer
         /// </summary>
         private readonly Types.Difficulty[] _SupportedDifficulties = new Types.Difficulty[]
@@ -75,6 +80,9 @@ namespace SMDIRandomizer.Forms
 
             // Check for exception log files
             this.CheckExceptionLogFiles();
+
+            // Display the application version
+            this.Text += " - " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
         #endregion
 
@@ -159,6 +167,27 @@ namespace SMDIRandomizer.Forms
         }
 
         /// <summary>
+        /// Click to select the emulator executable
+        /// </summary>
+        private void EmulatorSourceButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // If the user confirms the selection
+                if (this.OpenEmulatorDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Stores the filename
+                    this.EmulatorSourceTextBox.Text = this.OpenEmulatorDialog.FileName;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                ex.LogAndDisplayMessage();
+            }
+        }
+
+        /// <summary>
         /// Click to see the exception logs
         /// </summary>
         private void ErrorLogButton_Click(object sender, EventArgs e)
@@ -201,7 +230,7 @@ namespace SMDIRandomizer.Forms
         private void FileSelectTextBox_TextChanged(object sender, EventArgs e)
         {
             // Makes shure the background color is not representing "error"
-            this.FileSelectTextBox.BackColor = this.BackColor;
+            ((TextBox)sender).BackColor = this.BackColor;
         }
 
         /// <summary>
@@ -232,7 +261,9 @@ namespace SMDIRandomizer.Forms
                 Seed = (int)this.SeedNumericSelection.Value,
                 SaveSpoilers = this.SpoilerCheckBox.Checked,
                 RandomSeedCount = (int)this.RandomSeedNumericSelection.Value,
-                Difficulty = (this.DifficultyComboBox.SelectedItem as DifficultyOption).Difficulty
+                Difficulty = (this.DifficultyComboBox.SelectedItem as DifficultyOption).Difficulty,
+                StartEmulator = this.UseEmulatorCheckBox.Checked,
+                EmulatorExecutablePath = this.EmulatorSourceTextBox.Text
             };
 
             return rdparameters;
@@ -251,6 +282,8 @@ namespace SMDIRandomizer.Forms
             this.SeedNumericSelection.Value = rdparameters.Seed;
             this.RandomSeedNumericSelection.Value = rdparameters.RandomSeedCount;
             this.SpoilerCheckBox.Checked = rdparameters.SaveSpoilers;
+            this.UseEmulatorCheckBox.Checked = rdparameters.StartEmulator;
+            this.EmulatorSourceTextBox.Text = rdparameters.EmulatorExecutablePath;
 
             // Populates the difficulty combobox options
             List<DifficultyOption> options = new List<DifficultyOption>();
@@ -317,6 +350,17 @@ namespace SMDIRandomizer.Forms
                     // If it is invalid, change the color of the text box to show the problem
                     this.FileSelectTextBox.BackColor = Color.Salmon;
                     this.PrintUserMessage(Properties.Resources.FilePathWarning, UserMessageType.Warning);
+                    this.PrintUserMessage("", UserMessageType.Warning);
+                    return;
+                }
+
+                // Check if the emulator is valid
+                if (this.UseEmulatorCheckBox.Checked && (string.IsNullOrWhiteSpace(this.EmulatorSourceTextBox.Text) || !File.Exists(this.EmulatorSourceTextBox.Text)))
+                {
+                    // If it is invalid, change the color of the text box to show the problem
+                    this.EmulatorSourceTextBox.BackColor = Color.Salmon;
+                    this.PrintUserMessage(Properties.Resources.EmulatorFilePathWarning, UserMessageType.Warning);
+                    this.PrintUserMessage("", UserMessageType.Warning);
                     return;
                 }
 
@@ -484,7 +528,7 @@ namespace SMDIRandomizer.Forms
                     }
 
                     // Set the last randomized ROM file
-                    rdparameters.LasRandomizedROMFile = filepath;
+                    this._LasRandomizedROMFile = filepath;
 
                     // Progress message
                     this.BeginInvoke(
@@ -530,7 +574,7 @@ namespace SMDIRandomizer.Forms
                                 this.PrintUserMessage(string.Format(Properties.Resources.EmulatorStartingMessage, emulatorname));
 
                                 // Lauch the emulator
-                                System.Diagnostics.Process.Start(rdparameters.EmulatorExecutablePath, "\"" + rdparameters.LasRandomizedROMFile + "\"");
+                                System.Diagnostics.Process.Start(rdparameters.EmulatorExecutablePath, "\"" + this._LasRandomizedROMFile + "\"");
                                 this.PrintUserMessage(string.Format(Properties.Resources.EmulatorStartedMessage, emulatorname), UserMessageType.Sucess);
                             }
 
@@ -605,6 +649,15 @@ namespace SMDIRandomizer.Forms
                     e.Cancel = true;
                 }
             }
+        }
+
+        /// <summary>
+        /// When the option to load the emulator is checked/unchecked
+        /// </summary>
+        private void UseEmulatorCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            this.EmulatorSourceTable.Enabled = this.UseEmulatorCheckBox.Checked;
+            this.EmulatorSourceTextBox.BackColor = this.BackColor;
         }
         #endregion
     }

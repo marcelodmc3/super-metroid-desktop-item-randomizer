@@ -16,6 +16,8 @@ namespace SMDIRandomizer.Forms
         public AppInfoForm()
         {
             this.InitializeComponent();
+
+            this.VersionLabel.Text += " " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
         #endregion
 
