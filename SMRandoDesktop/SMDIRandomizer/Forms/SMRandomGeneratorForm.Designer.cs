@@ -157,7 +157,7 @@
             this.EmulatorSourceLabel.TabIndex = 1;
             this.EmulatorSourceLabel.Text = "Select the emulator:";
             this.EmulatorSourceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExplantionToolTip.SetToolTip(this.EmulatorSourceLabel, "Select an emulator program to lauch the randomized ROM file");
+            this.ExplantionToolTip.SetToolTip(this.EmulatorSourceLabel, "Select an emulator program to launch the randomized ROM file");
             // 
             // EmulatorSourceButton
             // 
@@ -170,7 +170,7 @@
             this.EmulatorSourceButton.Size = new System.Drawing.Size(32, 28);
             this.EmulatorSourceButton.TabIndex = 3;
             this.EmulatorSourceButton.Text = "...";
-            this.ExplantionToolTip.SetToolTip(this.EmulatorSourceButton, "Select an emulator program to lauch the randomized ROM file");
+            this.ExplantionToolTip.SetToolTip(this.EmulatorSourceButton, "Select an emulator program to launch the randomized ROM file");
             this.EmulatorSourceButton.UseVisualStyleBackColor = true;
             this.EmulatorSourceButton.Click += new System.EventHandler(this.EmulatorSourceButton_Click);
             // 
@@ -432,7 +432,8 @@
             this.SpoilerCheckBox.Size = new System.Drawing.Size(145, 19);
             this.SpoilerCheckBox.TabIndex = 14;
             this.SpoilerCheckBox.Text = "Save spoilers file";
-            this.ExplantionToolTip.SetToolTip(this.SpoilerCheckBox, "Generates a text file containing the location of the randomized items.\r\n");
+            this.ExplantionToolTip.SetToolTip(this.SpoilerCheckBox, "Generates a text file containing the location of the randomized items that is sav" +
+        "ed alongside the randomized ROM file.\r\n");
             this.SpoilerCheckBox.UseVisualStyleBackColor = true;
             // 
             // RandomizeButton
@@ -510,7 +511,7 @@
             this.AppInfoButton.Name = "AppInfoButton";
             this.AppInfoButton.Size = new System.Drawing.Size(40, 40);
             this.AppInfoButton.TabIndex = 17;
-            this.ExplantionToolTip.SetToolTip(this.AppInfoButton, "Information about this software.");
+            this.ExplantionToolTip.SetToolTip(this.AppInfoButton, "Click to see aditional information about this software.");
             this.AppInfoButton.UseVisualStyleBackColor = true;
             this.AppInfoButton.Click += new System.EventHandler(this.AppInfoButton_Click);
             // 

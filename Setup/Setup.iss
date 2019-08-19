@@ -1,4 +1,4 @@
-#define AppVersion "0.9"
+#define AppVersion "0.9.5"
 #define AppName "SMDIRandomizer"
 #define AppFullName "Super Metroid Desktop Item Randomizer"
 #define AppGUID "{3d79d822-207f-48a1-aad4-27dc4396d52c}"

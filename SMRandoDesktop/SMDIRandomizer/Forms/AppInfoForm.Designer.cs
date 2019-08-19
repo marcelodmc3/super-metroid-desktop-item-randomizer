@@ -97,7 +97,7 @@
             this.BuiltAgainstLabel.Size = new System.Drawing.Size(422, 30);
             this.BuiltAgainstLabel.TabIndex = 1;
             this.BuiltAgainstLabel.Text = "This randomizer was built against the on-line \"Super Metroid Item Randomizer\" ver" +
-    "sion 2.10 (2019-01-16) built by tewtal that can be found at: ";
+    "sion 2.10 (2019-01-16) by tewtal that can be found at: ";
             // 
             // BuiltAgainstLink
             // 
