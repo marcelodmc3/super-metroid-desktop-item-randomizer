@@ -1,4 +1,4 @@
-#define AppVersion "0.9.5"
+#define AppVersion "0.9.8"
 #define AppName "SMDIRandomizer"
 #define AppFullName "Super Metroid Desktop Item Randomizer"
 #define AppGUID "{3d79d822-207f-48a1-aad4-27dc4396d52c}"
@@ -57,11 +57,10 @@ Ngen=Optimizing the performance of {#AppName} for your system.
 InstallRun=Run the {#AppFullName}
 
 [Files]
-; Arquivos comuns
+Source: bin\patches\*; DestDir: {app}\patches; Flags: restartreplace recursesubdirs overwritereadonly uninsneveruninstall
 Source: smdirm.ico; DestDir: {app}
 Source: website.url; DestDir: {app}
 
-; Arquivos específicos do projeto
 Source: bin\*.dll; DestDir: {app}; Flags: restartreplace ignoreversion;
 Source: bin\*.exe; Excludes: *vshost.exe; DestDir: {app}; Flags: restartreplace ignoreversion
 
@@ -71,19 +70,19 @@ Name: {group}\{#AppCompanyFull}; Filename: {app}\website.URL; IconFilename: {app
 Name: {commondesktop}\{#AppFullName}; Filename: {app}\{#AppExe}; IconFilename: {app}\{#AppExe}; Comment: {cm:AppDescription}
 
 [Run]
-; Otimizando a instalação
 Filename: {code:Ngen64Cmd}; Parameters: "install ""{app}\{#AppExe}"""; StatusMsg: {cm:Ngen}; Check: CheckNgen64; Flags: runhidden
 Filename: {code:Ngen64Cmd}; Parameters: "install ""{pf}\{#AppCompany}\LogReport.exe"""; StatusMsg: {cm:Ngen}; Check: CheckNgen64; Flags: runhidden
-
-; Opção de executar após instalar
 Filename: {app}\{#AppExe}; WorkingDir: {app}; Description: {cm:InstallRun}; Flags: nowait postinstall runasoriginaluser
+
+[UninstallDelete]
+Type: filesandordirs; Name: "{app}\patches"
+Type: filesandordirs; Name: "{commonappdata}\{#AppName}"
 
 [UninstallRun]
 Filename: {code:Ngen64Cmd}; Parameters: "uninstall ""{app}\{#AppExe}"""; Check: CheckNgen64; Flags: runhidden
 
 [Registry]
 
-; Registros globais de usuário
 Root: HKLM; Subkey: Software\{#AppCompany}; Flags: uninsdeletekeyifempty
 Root: HKLM; Subkey: Software\{#AppCompany}\{#AppName}; Flags: uninsdeletekeyifempty; Permissions: users-modify
 Root: HKLM; Subkey: Software\Microsoft\Windows\CurrentVersion\SharedDLLs; ValueType: dword; ValueName: {pf}\{#AppCompany}\LogReport.exe; ValueData: $FFFF; Flags: deletevalue dontcreatekey

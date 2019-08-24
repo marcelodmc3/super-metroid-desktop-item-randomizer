@@ -1,4 +1,5 @@
-﻿using ItemRandomizer;
+﻿using Base;
+using ItemRandomizer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -367,30 +368,21 @@ namespace SMDIRandomizer.Forms
                 // Get the randomization parameters
                 RandomizerParameters rdparameters = this.GetRandomizerParameters();
 
-                // Disabel all user actions while processing
-                this.DifficultyTable.Enabled = false;
-                this.RomSourceTable.Enabled = false;
-                this.SeedingMethodTable.Enabled = false;
-                this.RandomizeButton.Enabled = false;
-                this.AppInfoButton.Enabled = false;
-                this.ErrorLogButton.Enabled = false;
+                // Disable user input components
+                this.UserInputLock();
 
+                // Starts the randomization process
                 this.RandomizerThread.RunWorkerAsync(rdparameters);
             }
             catch (Exception ex)
             {
                 ex.LogAndDisplayMessage();
 
-                // Enable user actions
-                this.DifficultyTable.Enabled = true;
-                this.RomSourceTable.Enabled = true;
-                this.SeedingMethodTable.Enabled = true;
-                this.RandomizeButton.Enabled = true;
-                this.AppInfoButton.Enabled = true;
-                this.ErrorLogButton.Enabled = true;
+                // Unlock the user interface
+                this.UserInputUnlock();
             }
         }
-
+        
         /// <summary>
         /// Deals whith exceptions during the randomization process
         /// </summary>
@@ -604,12 +596,7 @@ namespace SMDIRandomizer.Forms
             finally
             {
                 // Enable user actions
-                this.DifficultyTable.Enabled = true;
-                this.RomSourceTable.Enabled = true;
-                this.SeedingMethodTable.Enabled = true;
-                this.RandomizeButton.Enabled = true;
-                this.AppInfoButton.Enabled = true;
-                this.ErrorLogButton.Enabled = true;
+                this.UserInputUnlock();
             }
         }
 
@@ -658,6 +645,38 @@ namespace SMDIRandomizer.Forms
         {
             this.EmulatorSourceTable.Enabled = this.UseEmulatorCheckBox.Checked;
             this.EmulatorSourceTextBox.BackColor = this.BackColor;
+        }
+
+        /// <summary>
+        /// Disable the user input components
+        /// </summary>
+        private void UserInputLock()
+        {
+            // Disabel all user actions while processing
+            this.DifficultyTable.Enabled = false;
+            this.RomSourceTable.Enabled = false;
+            this.SeedingMethodTable.Enabled = false;
+            this.RandomizeButton.Enabled = false;
+            this.AppInfoButton.Enabled = false;
+            this.ErrorLogButton.Enabled = false;
+            this.EmulatorSourceTable.Enabled = false;
+            this.UseEmulatorCheckBox.Enabled = false;
+        }
+
+        /// <summary>
+        ///  Unlocks the user input components
+        /// </summary>
+        private void UserInputUnlock()
+        {
+            // Enable user actions
+            this.DifficultyTable.Enabled = true;
+            this.RomSourceTable.Enabled = true;
+            this.SeedingMethodTable.Enabled = true;
+            this.RandomizeButton.Enabled = true;
+            this.AppInfoButton.Enabled = true;
+            this.ErrorLogButton.Enabled = true;
+            this.EmulatorSourceTable.Enabled = true;
+            this.UseEmulatorCheckBox.Enabled = true;
         }
         #endregion
     }

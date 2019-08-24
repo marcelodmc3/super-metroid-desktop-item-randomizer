@@ -265,6 +265,7 @@
             this.SeedNumericSelection.Size = new System.Drawing.Size(284, 23);
             this.SeedNumericSelection.TabIndex = 6;
             this.SeedNumericSelection.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ExplantionToolTip.SetToolTip(this.SeedNumericSelection, "Enter a seed here or leave it at 0 to create a new random seed");
             // 
             // SeedRadioButton
             // 
@@ -279,6 +280,7 @@
             this.SeedRadioButton.TabIndex = 5;
             this.SeedRadioButton.TabStop = true;
             this.SeedRadioButton.Text = "Pick a specific seed number: ";
+            this.ExplantionToolTip.SetToolTip(this.SeedRadioButton, "Enter a seed here or leave it at 0 to create a new random seed");
             this.SeedRadioButton.UseVisualStyleBackColor = true;
             // 
             // RandomSeedRadioButton

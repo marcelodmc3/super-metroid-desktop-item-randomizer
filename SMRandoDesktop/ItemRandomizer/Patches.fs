@@ -512,7 +512,7 @@ module Patches =
     let getIpsData (patches: IpsPatch list) =
         [ for p in patches do
             let bytes = 
-                use binaryReader = new BinaryReader(File.Open(__SOURCE_DIRECTORY__ + "/patches/" + p.FileName, FileMode.Open))
+                use binaryReader = new BinaryReader(File.Open(Base.Core.PatchesPath + p.FileName, FileMode.Open, FileAccess.Read))
                 binaryReader.ReadBytes(int binaryReader.BaseStream.Length)
             yield bytes
         ]                

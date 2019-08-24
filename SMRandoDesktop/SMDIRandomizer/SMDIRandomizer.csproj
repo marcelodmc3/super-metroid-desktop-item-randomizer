@@ -38,6 +38,15 @@
   <PropertyGroup>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'StandAlone %28Release%29|AnyCPU'">
+    <OutputPath>bin\StandAlone %28Release%29\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,7 +67,6 @@
     <Compile Include="Forms\AppInfoForm.Designer.cs">
       <DependentUpon>AppInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Core.cs" />
     <Compile Include="DifficultyOption.cs" />
     <Compile Include="ExceptionHelper.cs" />
     <Compile Include="Forms\ExceptionLogForm.cs">
@@ -122,6 +130,10 @@
     <None Include="Resources\Error_64x64.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Base\Base.csproj">
+      <Project>{a6f51ea2-a2f6-4cfb-acd7-2bacdd1c9b42}</Project>
+      <Name>Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ItemRandomizer\ItemRandomizer.fsproj">
       <Project>{72c96a32-485c-482f-97f0-e4045428a7cc}</Project>
       <Name>ItemRandomizer</Name>
