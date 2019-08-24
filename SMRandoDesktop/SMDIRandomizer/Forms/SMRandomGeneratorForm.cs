@@ -16,14 +16,6 @@ namespace SMDIRandomizer.Forms
     /// </summary>
     public partial class SMRandomGeneratorForm : Form
     {
-        // Constants
-        #region Const
-        /// <summary>
-        /// Registry key to save and load settings
-        /// </summary>
-        private const string REGISTRY_KEY = @"SOFTWARE\Super Metroid Randomizer";
-        #endregion
-
         // Form Variables
         #region Variables
         /// <summary>
@@ -65,7 +57,7 @@ namespace SMDIRandomizer.Forms
 
             // Try to load the last section parameters
             RandomizerParameters rdparameters = null;
-            try { rdparameters = new RandomizerParameters(REGISTRY_KEY);}
+            try { rdparameters = new RandomizerParameters(Core.StandAlone);}
             catch (Exception ex)
             {
                 this.PrintUserMessage(Properties.Resources.LoadingSettingsErrorMessage, UserMessageType.Warning);
@@ -486,7 +478,7 @@ namespace SMDIRandomizer.Forms
                     string filename = "Super Metroid " + this.ComposeFileName(seed, rdparameters.Difficulty, rdparameters.SourceFilePath);
                     string filepath = folderpath + filename;
                     string spoilerfilepath = filepath + ".spoilers.txt";
-                    string tempspoilersfile = Path.GetTempFileName();
+                    string tempspoilersfile = Core.StandAlone ? Core.ApplicationPath + "\\temp" + seed : Path.GetTempFileName();
 
                     try
                     {
@@ -609,7 +601,7 @@ namespace SMDIRandomizer.Forms
             {
                 // Save parameters
                 RandomizerParameters rdparameters = this.GetRandomizerParameters();
-                rdparameters.SaveParameters(REGISTRY_KEY);
+                rdparameters.SaveParameters(Core.StandAlone);
             }
 
             // If there is an error while saving the parameters, just log it and ignore it

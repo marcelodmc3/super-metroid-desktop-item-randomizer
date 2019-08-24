@@ -38,6 +38,17 @@ namespace Base
 #endif
 
 #endif
+        /// <summary>
+        /// Path to the stando alone configuration file
+        /// </summary>
+        public static string StandAloneFilePath
+        {
+            get
+            {
+                // Returns the path based on the applicatoin folder
+                return Core.ApplicationPath + "\\" + System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".param";
+            }
+        }
 
         /// <summary>
         /// Folder path that contains the application executable
