@@ -122,7 +122,7 @@
     <value>..\Resources\Back_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CancelledMessage" xml:space="preserve">
-    <value>Thre randomization process was cancelled.</value>
+    <value>The randomization process was cancelled.</value>
   </data>
   <data name="ConfirmClosingCaption" xml:space="preserve">
     <value>Closing...</value>
@@ -157,7 +157,7 @@ Are you shure you want to stop it and close the application?</value>
     <value>Please select a valid emulator executable.</value>
   </data>
   <data name="EmulatorStartedMessage" xml:space="preserve">
-    <value>"{0}" started sucessfully!</value>
+    <value>{0} started successfully!</value>
   </data>
   <data name="EmulatorStartingErrorMessage" xml:space="preserve">
     <value>An unexpected problem ocurred while trying to start the emulator.</value>
@@ -169,9 +169,9 @@ Are you shure you want to stop it and close the application?</value>
     <value>Error while processing.</value>
   </data>
   <data name="ErrorMessage" xml:space="preserve">
-    <value>An error ocurred while trying to randomize the selected ROM file.
+    <value>An error occurred while trying to randomize the selected ROM file.
 
-Make shure you are using a valid vanilla (unheadered) Super Metroid ROM file and that you have permission to read from and write to the ROM source file location.</value>
+Make sure you are using a valid vanilla (unheadered) Super Metroid ROM file and that you have permission to read from and write to the ROM source file location.</value>
   </data>
   <data name="Error_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Error_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -189,7 +189,7 @@ Make shure you are using a valid vanilla (unheadered) Super Metroid ROM file and
     <value>Your randomized file(s) can be found in the same folder containing the original ROM file(s).</value>
   </data>
   <data name="GenericErrorMessage" xml:space="preserve">
-    <value>The application has encontered a error.</value>
+    <value>The application has encontered an error.</value>
   </data>
   <data name="Info_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Info_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -198,13 +198,13 @@ Make shure you are using a valid vanilla (unheadered) Super Metroid ROM file and
     <value>Using the default parameters instead.</value>
   </data>
   <data name="LoadingRomMessage" xml:space="preserve">
-    <value>Loading ROM File...</value>
+    <value>Loading ROM file...</value>
   </data>
   <data name="LoadingRomMessageSucess" xml:space="preserve">
-    <value>The ROM file was loaded sucessfully.</value>
+    <value>The ROM file was loaded successfully.</value>
   </data>
   <data name="LoadingSettingsErrorMessage" xml:space="preserve">
-    <value>An problem ocurred while loading your last randomization parameters.</value>
+    <value>A problem occurred while loading your last randomization parameters.</value>
   </data>
   <data name="LogErrorCountLabel" xml:space="preserve">
     <value>Log file {0} ({1} file(s) in total)</value>
@@ -213,10 +213,10 @@ Make shure you are using a valid vanilla (unheadered) Super Metroid ROM file and
     <value>Randomizing ROM with the seed {0} [{1} / {2}]...</value>
   </data>
   <data name="RandomizingMessageSucess" xml:space="preserve">
-    <value>Randomized file {0} saved sucessfully.</value>
+    <value>Randomized file {0} saved successfully.</value>
   </data>
   <data name="ShortErrorMessage" xml:space="preserve">
-    <value>An error ocurred while trying to randomize de selected ROM file.</value>
+    <value>An error occurred while trying to randomize de selected ROM file.</value>
   </data>
   <data name="SMBackgroud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SMBackgroud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

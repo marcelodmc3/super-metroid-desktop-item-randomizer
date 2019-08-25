@@ -184,7 +184,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(460, 670);
-            this.MinimumSize = new System.Drawing.Size(460, 670);
+            this.MinimumSize = new System.Drawing.Size(460, 560);
             this.Name = "ExceptionLogForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

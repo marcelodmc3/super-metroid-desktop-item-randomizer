@@ -73,7 +73,7 @@ namespace Base
             get
             {
                 // Composes the log folder path
-                string logpath = (Core.Debug || Core.StandAlone ? Core.ApplicationPath : Core.CommonAppData + "\\" + System.Diagnostics.Process.GetCurrentProcess().ProcessName) + "\\ERROR_LOGS\\";
+                string logpath = (Core.Debug || Core.StandAlone ? Core.ApplicationPath : Core.CommonAppData + "\\" + System.Diagnostics.Process.GetCurrentProcess().ProcessName) + "\\logfiles\\";
 
                 // Creates the log file path if it does not exists yet
                 Directory.CreateDirectory(logpath);

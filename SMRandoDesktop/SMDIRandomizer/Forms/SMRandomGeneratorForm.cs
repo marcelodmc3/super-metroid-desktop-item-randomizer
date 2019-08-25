@@ -52,6 +52,9 @@ namespace SMDIRandomizer.Forms
             // Create the visual components
             this.InitializeComponent();
 
+            // Ajusts the size of the window in case of a low resolution screen
+            this.SetWindowSize();
+
             // Max value alowed for a seed
             this.SeedNumericSelection.Maximum = int.MaxValue;
 
@@ -431,13 +434,13 @@ namespace SMDIRandomizer.Forms
                 // Foreach seed to genareate
                 for (int i = 0; i < randocount; i++)
                 {
-                    // Input seed is valid?
+                    // User input seed?
                     if (rdparameters.UserInputSeed && rdparameters.Seed > 0)
                     {
                         // Use the input by the user
                         seeds[i] = rdparameters.Seed;
                     }
-                    else
+                    else // Pick a random seed
                     {
                         bool seedrepeated = true;
                         int newseed = 0;
@@ -464,7 +467,7 @@ namespace SMDIRandomizer.Forms
                 // For each seed generated
                 for (int i = 0; i < randocount; i++)
                 {
-                    // Seed used in the current randomization
+                    // Seed used that will be used in the current randomization
                     int seed = seeds[i];
 
                     // Progress message
@@ -477,8 +480,10 @@ namespace SMDIRandomizer.Forms
                     // Output file names
                     string filename = "Super Metroid " + this.ComposeFileName(seed, rdparameters.Difficulty, rdparameters.SourceFilePath);
                     string filepath = folderpath + filename;
-                    string spoilerfilepath = filepath + ".spoilers.txt";
-                    string tempspoilersfile = Core.StandAlone ? Core.ApplicationPath + "\\temp" + seed : Path.GetTempFileName();
+
+                    // Get the spoilers file paths
+                    string spoilerfilepath = rdparameters.SaveSpoilers ? filepath + ".spoilers.txt" : null;
+                    string tempspoilersfile = rdparameters.SaveSpoilers ? (Core.StandAlone ? Core.ApplicationPath + "\\temp" + seed : Path.GetTempFileName()) : null;
 
                     try
                     {
@@ -499,11 +504,15 @@ namespace SMDIRandomizer.Forms
                             ex);
                     }
 
-                    // Write the spoiler files
-                    SpoilersWriter.WriteSpoilers(tempspoilersfile, spoilerfilepath);
+                    // If the user wants to save spoilers files...
+                    if (rdparameters.SaveSpoilers)
+                    {
+                        // Write the spoiler file
+                        SpoilersWriter.WriteSpoilers(tempspoilersfile, spoilerfilepath);
 
-                    // Try to delete temp file, ignore-it if not possible
-                    try { File.Delete(tempspoilersfile); } catch {; }
+                        // Try to delete temp file, ignore-it if not possible
+                        try { File.Delete(tempspoilersfile); } catch {; }
+                    }
 
                     // Saves the new rom on the same folder as the source file
                     using (FileStream resultrom = new FileStream(filepath, FileMode.Create, FileAccess.ReadWrite))
@@ -533,7 +542,7 @@ namespace SMDIRandomizer.Forms
         {
             try
             {
-                // Throw any error
+                // Deals with any error
                 if (e.Error != null) this.RandomizerErrorTreatment(e.Error);
 
                 else
@@ -589,6 +598,37 @@ namespace SMDIRandomizer.Forms
             {
                 // Enable user actions
                 this.UserInputUnlock();
+            }
+        }
+
+        /// <summary>
+        /// Ajusts the size of the window in case of a low resolution screen
+        /// </summary>
+        private void SetWindowSize()
+        {
+            // If the resolution is lower than 1024x768
+            Rectangle resolution = Screen.PrimaryScreen.Bounds;
+            if (resolution.Width < 1024 || resolution.Height < 768)
+            {
+                // Se the size to the minimum
+                this.MaximumSize = this.MinimumSize;
+                this.Size = this.MinimumSize;
+
+                // Ajust padding and margins to leave space for the message output
+                Padding controlpadding = this.SeedingMethodLabel.Padding;
+                this.SeedingMethodLabel.Padding = new Padding(controlpadding.Left, 0, controlpadding.Right, controlpadding.Bottom);
+
+                controlpadding = this.DifficultyLabel.Padding;
+                this.DifficultyLabel.Padding = new Padding(controlpadding.Left, 0, controlpadding.Right, controlpadding.Bottom);
+
+                controlpadding = this.EmulatorLabel.Padding;
+                this.EmulatorLabel.Padding = new Padding(controlpadding.Left, 0, controlpadding.Right, controlpadding.Bottom);
+
+                controlpadding = this.RandomizeButton.Margin;
+                this.RandomizeButton.Margin = new Padding(controlpadding.Left, 0, controlpadding.Right, controlpadding.Bottom);
+
+                this.MainTable.ColumnStyles[0].Width = 35;
+                this.MainTable.ColumnStyles[1].Width = 65;
             }
         }
 

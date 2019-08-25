@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -36,6 +37,9 @@ namespace SMDIRandomizer.Forms
             if (logfiles.Count == 0) throw new ArgumentException(nameof(logfiles) + " is empty");
 
             this.InitializeComponent();
+
+            // Ajusts the size of the window in case of a low resolution screen
+            this.SetWindowSize();
 
             // Stores the logfiles sorted by date
             this._LogFiles = new List<LogFileInfo>(logfiles.Count);
@@ -111,6 +115,21 @@ namespace SMDIRandomizer.Forms
                 this.DisplayLogFile();
             }
             catch (Exception ex) { ex.LogAndDisplayMessage(); }
+        }
+
+        /// <summary>
+        /// Ajusts the size of the window in case of a low resolution screen
+        /// </summary>
+        private void SetWindowSize()
+        {
+            // If the resolution is lower than 1024x768
+            Rectangle resolution = Screen.PrimaryScreen.Bounds;
+            if (resolution.Width < 1024 || resolution.Height < 768)
+            {
+                // Se the size to the minimum
+                this.MaximumSize = this.MinimumSize;
+                this.Size = this.MinimumSize;
+            }
         }
         #endregion
 

@@ -1,4 +1,4 @@
-#define AppVersion "0.9.8"
+#define AppVersion "1.0.0"
 #define AppName "SMDIRandomizer"
 #define AppFullName "Super Metroid Desktop Item Randomizer"
 #define AppGUID "{3d79d822-207f-48a1-aad4-27dc4396d52c}"
@@ -11,9 +11,6 @@
 #define AppCompanyFull "SMDIRandomizer"
 #define AppDescription AppFullName + " installer version " + AppVersion
 
-[CustomMessages]
-
-
 [Setup]
 AllowNoIcons=true
 AppID={{#InstallID}
@@ -22,7 +19,7 @@ AppPublisher={#AppCompanyFull}
 AppPublisherURL={#AppWebsite}
 AppSupportURL={#AppHelpsite}
 AppVerName={#AppFullName} {#AppVersion}
-AppVersion={#AppVersion}
+AppVersion={#AppVersion}                              
 ChangesAssociations=true
 CloseApplications=false
 Compression=lzma2/ultra64
@@ -47,8 +44,8 @@ VersionInfoProductName={#AppName}
 VersionInfoProductVersion={#AppVersion}
 VersionInfoTextVersion={#AppVersion}
 VersionInfoVersion={#AppVersion}
-WizardImageFile=WizModernImage.bmp
-WizardSmallImageFile=WizModernSmallImage.bmp
+WizardImageFile=WizSideImage.bmp
+WizardSmallImageFile=WizIconImage.bmp
 DisableProgramGroupPage=true
 
 [CustomMessages]
@@ -60,7 +57,6 @@ InstallRun=Run the {#AppFullName}
 Source: bin\patches\*; DestDir: {app}\patches; Flags: restartreplace recursesubdirs overwritereadonly uninsneveruninstall
 Source: smdirm.ico; DestDir: {app}
 Source: website.url; DestDir: {app}
-
 Source: bin\*.dll; DestDir: {app}; Flags: restartreplace ignoreversion;
 Source: bin\*.exe; Excludes: *vshost.exe; DestDir: {app}; Flags: restartreplace ignoreversion
 
@@ -82,7 +78,6 @@ Type: filesandordirs; Name: "{commonappdata}\{#AppName}"
 Filename: {code:Ngen64Cmd}; Parameters: "uninstall ""{app}\{#AppExe}"""; Check: CheckNgen64; Flags: runhidden
 
 [Registry]
-
 Root: HKLM; Subkey: Software\{#AppCompany}; Flags: uninsdeletekeyifempty
 Root: HKLM; Subkey: Software\{#AppCompany}\{#AppName}; Flags: uninsdeletekeyifempty; Permissions: users-modify
 Root: HKLM; Subkey: Software\Microsoft\Windows\CurrentVersion\SharedDLLs; ValueType: dword; ValueName: {pf}\{#AppCompany}\LogReport.exe; ValueData: $FFFF; Flags: deletevalue dontcreatekey

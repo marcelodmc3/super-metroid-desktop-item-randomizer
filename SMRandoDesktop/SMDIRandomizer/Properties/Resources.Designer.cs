@@ -71,7 +71,7 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thre randomization process was cancelled..
+        ///   Looks up a localized string similar to The randomization process was cancelled..
         /// </summary>
         internal static string CancelledMessage {
             get {
@@ -173,7 +173,7 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;{0}&quot; started sucessfully!.
+        ///   Looks up a localized string similar to {0} started successfully!.
         /// </summary>
         internal static string EmulatorStartedMessage {
             get {
@@ -229,9 +229,9 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error ocurred while trying to randomize the selected ROM file.
+        ///   Looks up a localized string similar to An error occurred while trying to randomize the selected ROM file.
         ///
-        ///Make shure you are using a valid vanilla (unheadered) Super Metroid ROM file and that you have permission to read from and write to the ROM source file location..
+        ///Make sure you are using a valid vanilla (unheadered) Super Metroid ROM file and that you have permission to read from and write to the ROM source file location..
         /// </summary>
         internal static string ErrorMessage {
             get {
@@ -268,7 +268,7 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The application has encontered a error..
+        ///   Looks up a localized string similar to The application has encontered an error..
         /// </summary>
         internal static string GenericErrorMessage {
             get {
@@ -296,7 +296,7 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Loading ROM File....
+        ///   Looks up a localized string similar to Loading ROM file....
         /// </summary>
         internal static string LoadingRomMessage {
             get {
@@ -305,7 +305,7 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The ROM file was loaded sucessfully..
+        ///   Looks up a localized string similar to The ROM file was loaded successfully..
         /// </summary>
         internal static string LoadingRomMessageSucess {
             get {
@@ -314,7 +314,7 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An problem ocurred while loading your last randomization parameters..
+        ///   Looks up a localized string similar to A problem occurred while loading your last randomization parameters..
         /// </summary>
         internal static string LoadingSettingsErrorMessage {
             get {
@@ -341,7 +341,7 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Randomized file {0} saved sucessfully..
+        ///   Looks up a localized string similar to Randomized file {0} saved successfully..
         /// </summary>
         internal static string RandomizingMessageSucess {
             get {
@@ -350,7 +350,7 @@ namespace SMDIRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error ocurred while trying to randomize de selected ROM file..
+        ///   Looks up a localized string similar to An error occurred while trying to randomize de selected ROM file..
         /// </summary>
         internal static string ShortErrorMessage {
             get {
