@@ -271,7 +271,7 @@ namespace SMDIRandomizer
                 spoilersInfo.Add(spoilLine.Replace(" -> ", ";").Split(';'));
             }
 
-            // Create strem to save the spoiler file
+            // Create stream to save the spoiler file
             using (TextWriter spoilerWriter = new StreamWriter(destinationfile))
             {
                 // Write by item type

@@ -312,7 +312,7 @@ namespace SMDIRandomizer.Forms
                 Text = message
             };
 
-            // Set the color
+            // Set the color based on the "severity" of the message
             switch(messagetype)
             {
                 case UserMessageType.Sucess:
@@ -334,7 +334,7 @@ namespace SMDIRandomizer.Forms
         }
 
         /// <summary>
-        /// Click no the "Randomize!" button to start a randomziation process
+        /// Click on the "Randomize!" button to start a randomziation process
         /// </summary>
         private void RandomizeButton_Click(object sender, EventArgs e)
         {
@@ -562,11 +562,11 @@ namespace SMDIRandomizer.Forms
                                 // Get emulator name
                                 string emulatorname = Path.GetFileName(rdparameters.EmulatorExecutablePath);
                                 
-                                // Inform the user that the emulator is about to star
+                                // Inform the user that the emulator is about to start
                                 this.PrintUserMessage(" ", UserMessageType.Sucess);
                                 this.PrintUserMessage(string.Format(Properties.Resources.EmulatorStartingMessage, emulatorname));
 
-                                // Lauch the emulator
+                                // Launch the emulator
                                 System.Diagnostics.Process.Start(rdparameters.EmulatorExecutablePath, "\"" + this._LasRandomizedROMFile + "\"");
                                 this.PrintUserMessage(string.Format(Properties.Resources.EmulatorStartedMessage, emulatorname), UserMessageType.Sucess);
                             }
